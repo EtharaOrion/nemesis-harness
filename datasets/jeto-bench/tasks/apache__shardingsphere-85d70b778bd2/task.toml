@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__shardingsphere-85d70b778bd2"
+org = "jeto-bench"
+description = "Reduce execution time of shardingsphere-infra/shardingsphere-infra-common in apache/shardingsphere"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/shardingsphere"
+ref = "09b27c273d3a7c7fd31a6853b8e4c95c9b669cb0"
+reference = "https://github.com/apache/shardingsphere/commit/85d70b778bd21610bf31651a76dcdd463546be18"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:efd6394deb345422e4ff4398d3500a9474d0067d7f04066c6021a8172e9769c5"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "85d70b778bd21610bf31651a76dcdd463546be18"
+before_commit = "09b27c273d3a7c7fd31a6853b8e4c95c9b669cb0"
+issue_number = "13263"
+pr_number = "13264"
+modified_modules = ["shardingsphere-infra/shardingsphere-infra-common"]
+changed_files = ["shardingsphere-infra/shardingsphere-infra-common/src/main/java/org/apache/shardingsphere/infra/metadata/schema/model/TableMetaData.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0015508540290424
+reference_p_value = 0.9786130273714662
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/shardingsphere-85d70b778bd21610bf31651a76dcdd463546be18:latest"
+image_tag = "ghcr.io/khesoem/shardingsphere-85d70b778bd21610bf31651a76dcdd463546be18:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "GoogleCloudPlatform__cloud-opensource-java-5b50571dd6d4"
+org = "jeto-bench"
+description = "Reduce execution time of dependencies in GoogleCloudPlatform/cloud-opensource-java"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "GoogleCloudPlatform/cloud-opensource-java"
+ref = "8831cbe1d9152f8351007e6e152bcbc5d314096c"
+reference = "https://github.com/GoogleCloudPlatform/cloud-opensource-java/commit/5b50571dd6d40a0327b42b60868c8c85406631a1"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:eab5a01c7f6c6b889860f1c22a8be07e1caa50e53661557a28a1bf4f4dcd6e08"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "5b50571dd6d40a0327b42b60868c8c85406631a1"
+before_commit = "8831cbe1d9152f8351007e6e152bcbc5d314096c"
+issue_number = "1320"
+pr_number = "1394"
+modified_modules = ["dependencies"]
+changed_files = ["dependencies/src/main/java/com/google/cloud/tools/opensource/classpath/ClassPathEntry.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0032432226764761
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/cloud-opensource-java-5b50571dd6d40a0327b42b60868c8c85406631a1:latest"
+image_tag = "ghcr.io/khesoem/cloud-opensource-java-5b50571dd6d40a0327b42b60868c8c85406631a1:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

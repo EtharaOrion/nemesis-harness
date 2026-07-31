@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "netty__netty-48687be377c1"
+org = "jeto-bench"
+description = "Reduce execution time of common in netty/netty"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "netty/netty"
+ref = "48687be377c1e0b94acddca4ae54eff996c1ee2a^"
+reference = "https://github.com/netty/netty/commit/48687be377c1e0b94acddca4ae54eff996c1ee2a"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:271003bed1ae6882bc0362064c846b3dece5f766a73dd53e28e8d3725036047f"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "48687be377c1e0b94acddca4ae54eff996c1ee2a"
+issue_number = "14268"
+modified_modules = ["common"]
+changed_files = ["common/src/main/java/io/netty/util/Recycler.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0001071493053856
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/netty-48687be377c1e0b94acddca4ae54eff996c1ee2a:latest"
+image_tag = "ghcr.io/khesoem/netty-48687be377c1e0b94acddca4ae54eff996c1ee2a:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

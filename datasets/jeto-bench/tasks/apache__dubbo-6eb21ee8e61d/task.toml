@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__dubbo-6eb21ee8e61d"
+org = "jeto-bench"
+description = "Reduce execution time of dubbo-remoting/dubbo-remoting-api in apache/dubbo"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/dubbo"
+ref = "dbb0a64a84d841f858cefbdaecae8bfe9f3788a1"
+reference = "https://github.com/apache/dubbo/commit/6eb21ee8e61d4da51145154108bbd52efebb190c"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:b183c38a672a05f2e2c89ce544c88e1406af173203a427998d58fc98d9413c5a"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "6eb21ee8e61d4da51145154108bbd52efebb190c"
+before_commit = "dbb0a64a84d841f858cefbdaecae8bfe9f3788a1"
+issue_number = "4694"
+pr_number = "4698"
+modified_modules = ["dubbo-remoting/dubbo-remoting-api"]
+changed_files = ["dubbo-remoting/dubbo-remoting-api/src/main/java/org/apache/dubbo/remoting/exchange/support/header/HeaderExchangeChannel.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.004817597537793
+reference_p_value = 0.9999999990686774
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/dubbo-6eb21ee8e61d4da51145154108bbd52efebb190c:latest"
+image_tag = "ghcr.io/khesoem/dubbo-6eb21ee8e61d4da51145154108bbd52efebb190c:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

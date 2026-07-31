@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-47288a96439b"
+org = "jeto-bench"
+description = "Reduce execution time of services in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "47288a96439bb3e6db587ea37ceece7e96665320^"
+reference = "https://github.com/keycloak/keycloak/commit/47288a96439bb3e6db587ea37ceece7e96665320"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:b653c600d5a0e86a21378eacf9a7bfda5c877984f798888bca52f317e9ba5547"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "47288a96439bb3e6db587ea37ceece7e96665320"
+issue_number = "43698"
+modified_modules = ["services"]
+changed_files = ["services/src/main/java/org/keycloak/broker/saml/mappers/AbstractAttributeToRoleMapper.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0142984088453214
+reference_p_value = 0.9999995660036802
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-47288a96439bb3e6db587ea37ceece7e96665320:latest"
+image_tag = "ghcr.io/khesoem/keycloak-47288a96439bb3e6db587ea37ceece7e96665320:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

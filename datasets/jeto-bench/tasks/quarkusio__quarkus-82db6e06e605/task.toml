@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "quarkusio__quarkus-82db6e06e605"
+org = "jeto-bench"
+description = "Reduce execution time of independent-projects/arc/runtime,independent-projects/arc/processor in quarkusio/quarkus"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "quarkusio/quarkus"
+ref = "82db6e06e60546d73d18b2bdd7cfc3b5791da8ac^"
+reference = "https://github.com/quarkusio/quarkus/commit/82db6e06e60546d73d18b2bdd7cfc3b5791da8ac"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:1fe626fdf5db78fd19da4e22dcb221d3a7855ac27d6f5241f1946a8b6481e6ef"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "82db6e06e60546d73d18b2bdd7cfc3b5791da8ac"
+issue_number = "4490"
+modified_modules = ["independent-projects/arc/runtime", "independent-projects/arc/processor"]
+changed_files = ["independent-projects/arc/runtime/src/main/java/io/quarkus/arc/ArcContainerImpl.java", "independent-projects/arc/processor/src/main/java/io/quarkus/arc/processor/MethodDescriptors.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/InstanceBean.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/Reflections.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/AbstractSharedContext.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/EventImpl.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/InjectableContext.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/SubclassMethodMetadata.java", "independent-projects/arc/processor/src/main/java/io/quarkus/arc/processor/BeanGenerator.java", "independent-projects/arc/runtime/src/main/java/io/quarkus/arc/RequestContext.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -6.131959774353795e-05
+reference_p_value = 0.9506314266473056
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/quarkus-82db6e06e60546d73d18b2bdd7cfc3b5791da8ac:latest"
+image_tag = "ghcr.io/khesoem/quarkus-82db6e06e60546d73d18b2bdd7cfc3b5791da8ac:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

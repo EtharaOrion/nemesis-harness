@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "neo4j__neo4j-ogm-b160b9a56f55"
+org = "jeto-bench"
+description = "Reduce execution time of core in neo4j/neo4j-ogm"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "neo4j/neo4j-ogm"
+ref = "b160b9a56f5569e37df6c41ba78981fa3990ac33^"
+reference = "https://github.com/neo4j/neo4j-ogm/commit/b160b9a56f5569e37df6c41ba78981fa3990ac33"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:889cf461f66c530064be340251a3ae2a8ff2b99db6845052eba5854e2e361074"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "b160b9a56f5569e37df6c41ba78981fa3990ac33"
+issue_number = "853"
+modified_modules = ["core"]
+changed_files = ["core/src/main/java/org/neo4j/ogm/metadata/FieldInfo.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.035590631716436
+reference_p_value = 0.9786130273714662
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/neo4j-ogm-b160b9a56f5569e37df6c41ba78981fa3990ac33:latest"
+image_tag = "ghcr.io/khesoem/neo4j-ogm-b160b9a56f5569e37df6c41ba78981fa3990ac33:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

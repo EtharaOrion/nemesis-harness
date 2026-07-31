@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "camunda-community-hub__spring-zeebe-0964527df570"
+org = "jeto-bench"
+description = "Reduce execution time of spring-client-zeebe,spring-boot-starter-camunda in camunda-community-hub/spring-zeebe"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "camunda-community-hub/spring-zeebe"
+ref = "3dadf8485225366b67753035086498b0285d6fb0"
+reference = "https://github.com/camunda-community-hub/spring-zeebe/commit/0964527df570216c152e1aab2dff906cafd450ab"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:73bee3c6226bf3eaef1f1e114d075ea4ee33981afad8e999461dc0cf72114351"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "0964527df570216c152e1aab2dff906cafd450ab"
+before_commit = "3dadf8485225366b67753035086498b0285d6fb0"
+issue_number = "653"
+pr_number = "656"
+modified_modules = ["spring-client-zeebe", "spring-boot-starter-camunda"]
+changed_files = ["spring-boot-starter-camunda/src/main/java/io/camunda/zeebe/spring/client/configuration/ZeebeClientAllAutoConfiguration.java", "spring-client-zeebe/src/main/java/io/camunda/zeebe/spring/client/jobhandling/JobHandlerInvokingSpringBeans.java", "spring-client-zeebe/src/main/java/io/camunda/zeebe/spring/client/jobhandling/JobWorkerManager.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0037790835426241
+reference_p_value = 0.9786130273714662
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/spring-zeebe-0964527df570216c152e1aab2dff906cafd450ab:latest"
+image_tag = "ghcr.io/khesoem/spring-zeebe-0964527df570216c152e1aab2dff906cafd450ab:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

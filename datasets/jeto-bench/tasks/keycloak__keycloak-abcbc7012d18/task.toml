@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-abcbc7012d18"
+org = "jeto-bench"
+description = "Reduce execution time of quarkus/config-api,model/map-hot-rod in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "28fc5b4574ed5c8cc000ae11d5595d91af7f6a70"
+reference = "https://github.com/keycloak/keycloak/commit/abcbc7012d186f9d5abc4356cf520a8ed332e929"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:fd4c31a9ed7bfbec2d6bd793a192dd39bd9de2a19a1d8dd5de75fcc8f75439cd"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "abcbc7012d186f9d5abc4356cf520a8ed332e929"
+before_commit = "28fc5b4574ed5c8cc000ae11d5595d91af7f6a70"
+issue_number = "12497"
+pr_number = "15023"
+modified_modules = ["quarkus/config-api", "model/map-hot-rod"]
+changed_files = ["quarkus/config-api/src/main/java/org/keycloak/config/StorageOptions.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/connections/DefaultHotRodConnectionProviderFactory.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0435848684142172
+reference_p_value = 0.8192026959732175
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-abcbc7012d186f9d5abc4356cf520a8ed332e929:latest"
+image_tag = "ghcr.io/khesoem/keycloak-abcbc7012d186f9d5abc4356cf520a8ed332e929:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

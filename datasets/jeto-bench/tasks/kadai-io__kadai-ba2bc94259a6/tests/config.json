@@ -1,0 +1,14 @@
+{
+  "log_dir": "/logs/harbor",
+  "output_dir": "/logs/harbor",
+  "exec_times": 11,
+  "min_p_value": 0.1,
+  "min_exec_time_improvement": 0.01,
+  "modules": [
+    "history/kadai-simplehistory-provider",
+    "lib/kadai-core"
+  ],
+  "f2p": [],
+  "p2p_policy": "all-tests-in-modified-modules",
+  "shaped": false
+}

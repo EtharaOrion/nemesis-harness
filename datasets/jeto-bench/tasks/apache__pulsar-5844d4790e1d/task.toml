@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__pulsar-5844d4790e1d"
+org = "jeto-bench"
+description = "Reduce execution time of pulsar-client-api,pulsar-client in apache/pulsar"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/pulsar"
+ref = "a678e974e0f0a615cb774fb2a89b9a45a6c2bc1e"
+reference = "https://github.com/apache/pulsar/commit/5844d4790e1d4caa19d6b71d31ce6f2e374fa2ad"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:a4865310ca05b92733f34770fcf01ccafa4971fa79e7baa09ce3d36c30c2f2c9"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "5844d4790e1d4caa19d6b71d31ce6f2e374fa2ad"
+before_commit = "a678e974e0f0a615cb774fb2a89b9a45a6c2bc1e"
+issue_number = "23250"
+pr_number = "23251"
+modified_modules = ["pulsar-client-api", "pulsar-client"]
+changed_files = ["pulsar-client/src/main/java/org/apache/pulsar/client/impl/TransactionMetaStoreHandler.java", "pulsar-client/src/main/java/org/apache/pulsar/client/impl/PulsarClientImpl.java", "pulsar-client/src/main/java/org/apache/pulsar/client/impl/TopicListWatcher.java", "pulsar-client-api/src/main/java/org/apache/pulsar/client/api/PulsarClientException.java", "pulsar-client/src/main/java/org/apache/pulsar/client/impl/ConsumerImpl.java", "pulsar-client/src/main/java/org/apache/pulsar/client/impl/ProducerImpl.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0404054350084429
+reference_p_value = 0.9999957848340272
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/pulsar-5844d4790e1d4caa19d6b71d31ce6f2e374fa2ad:latest"
+image_tag = "ghcr.io/khesoem/pulsar-5844d4790e1d4caa19d6b71d31ce6f2e374fa2ad:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

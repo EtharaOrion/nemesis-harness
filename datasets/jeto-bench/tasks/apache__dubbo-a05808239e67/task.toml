@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__dubbo-a05808239e67"
+org = "jeto-bench"
+description = "Reduce execution time of dubbo-rpc/dubbo-rpc-api in apache/dubbo"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/dubbo"
+ref = "bfa52b2462da55ebb3732669cdd2b558120e89ae"
+reference = "https://github.com/apache/dubbo/commit/a05808239e67174ceefc6e7e5952de5173c23a36"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:97f5e54cb73dd602e36e46349d5efbff31ee10392146336a480550bb4c6889b1"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "a05808239e67174ceefc6e7e5952de5173c23a36"
+before_commit = "bfa52b2462da55ebb3732669cdd2b558120e89ae"
+issue_number = "4279"
+pr_number = "4381"
+modified_modules = ["dubbo-rpc/dubbo-rpc-api"]
+changed_files = ["dubbo-rpc/dubbo-rpc-api/src/main/java/org/apache/dubbo/rpc/protocol/AsyncToSyncInvoker.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0092879498416588
+reference_p_value = 0.9999957848340272
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/dubbo-a05808239e67174ceefc6e7e5952de5173c23a36:latest"
+image_tag = "ghcr.io/khesoem/dubbo-a05808239e67174ceefc6e7e5952de5173c23a36:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

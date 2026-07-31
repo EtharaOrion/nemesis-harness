@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "OpenAPITools__openapi-generator-196c2b164245"
+org = "jeto-bench"
+description = "Reduce execution time of modules/openapi-generator-maven-plugin in OpenAPITools/openapi-generator"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "OpenAPITools/openapi-generator"
+ref = "196c2b1642453c15e33bbdb6677339468b1a5d7f^"
+reference = "https://github.com/OpenAPITools/openapi-generator/commit/196c2b1642453c15e33bbdb6677339468b1a5d7f"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:e92db5fdca9e41fe11f6223f21ffb22359184fee887d474a97e1089654daeb30"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "196c2b1642453c15e33bbdb6677339468b1a5d7f"
+issue_number = "16490"
+modified_modules = ["modules/openapi-generator-maven-plugin"]
+changed_files = ["modules/openapi-generator-maven-plugin/src/main/java/org/openapitools/codegen/plugin/CodeGenMojo.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0129861532103159
+reference_p_value = 0.9999957848340272
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/openapi-generator-196c2b1642453c15e33bbdb6677339468b1a5d7f:latest"
+image_tag = "ghcr.io/khesoem/openapi-generator-196c2b1642453c15e33bbdb6677339468b1a5d7f:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

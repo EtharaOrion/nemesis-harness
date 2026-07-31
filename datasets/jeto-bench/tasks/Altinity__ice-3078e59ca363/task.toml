@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "Altinity__ice-3078e59ca363"
+org = "jeto-bench"
+description = "Reduce execution time of ice in Altinity/ice"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "Altinity/ice"
+ref = "8d42470b3c6c241da08c761c745814d76836731e"
+reference = "https://github.com/Altinity/ice/commit/3078e59ca36351442558362539748991c18166d1"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:fec071254989359de5915e118009f9495747ab3084c41258d9049b9f6d3babbf"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "3078e59ca36351442558362539748991c18166d1"
+before_commit = "8d42470b3c6c241da08c761c745814d76836731e"
+issue_number = "2"
+pr_number = "24"
+modified_modules = ["ice"]
+changed_files = ["ice/src/main/java/com/altinity/ice/Main.java", "ice/src/main/java/com/altinity/ice/internal/cmd/Insert.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0007972169879692
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/ice-3078e59ca36351442558362539748991c18166d1:latest"
+image_tag = "ghcr.io/khesoem/ice-3078e59ca36351442558362539748991c18166d1:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

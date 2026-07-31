@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "apiman__apiman-29fb6a19c683"
+org = "jeto-bench"
+description = "Reduce execution time of manager/api/es,gateway/engine/es in apiman/apiman"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apiman/apiman"
+ref = "29fb6a19c683ca5edba4a283209bb89026dc0f47^"
+reference = "https://github.com/apiman/apiman/commit/29fb6a19c683ca5edba4a283209bb89026dc0f47"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:b637742bd50b6a2a22f3a72062847de5b27f6bf2a1f3be54dd9ba5550d910fff"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "29fb6a19c683ca5edba4a283209bb89026dc0f47"
+issue_number = "1153"
+modified_modules = ["manager/api/es", "gateway/engine/es"]
+changed_files = ["manager/api/es/src/main/java/io/apiman/manager/api/es/EsStorage.java", "gateway/engine/es/src/main/java/io/apiman/gateway/engine/es/EsRegistry.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0254258075395913
+reference_p_value = 0.9992845468223096
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/apiman-29fb6a19c683ca5edba4a283209bb89026dc0f47:latest"
+image_tag = "ghcr.io/khesoem/apiman-29fb6a19c683ca5edba4a283209bb89026dc0f47:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

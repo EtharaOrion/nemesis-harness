@@ -111,7 +111,9 @@ max_iterations = {max-iterations}
 api_key = "{api-key}"
 
 # API base URL (For Headless / CLI only -  In Web this is overridden by Session Init)
-#base_url = ""
+# Points at the Claude Code OAuth bridge on the host (see scripts/start_claude_bridge.sh).
+# Rendered empty when OPENHANDS_LLM_BASE_URL is cleared, i.e. direct provider access.
+base_url = "{base-url}"
 
 # API version
 #api_version = ""

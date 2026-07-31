@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__shardingsphere-elasticjob-ui-19bb6f6d7d2b"
+org = "jeto-bench"
+description = "Reduce execution time of shardingsphere-elasticjob-lite-ui/shardingsphere-elasticjob-lite-ui-backend,shardingsphere-elasticjob-cloud-ui/shardingsphere-elasticjob-cloud-ui-backend in apache/shardingsphere-elasticjob-ui"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/shardingsphere-elasticjob-ui"
+ref = "7b53e470dc36f6049a926e07f155224ccdcab9cf"
+reference = "https://github.com/apache/shardingsphere-elasticjob-ui/commit/19bb6f6d7d2b5ec8847b9657c0984fbcf2ac381f"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:831d15d1ff521f5d8c76b035485f04c10c9290035e390e2637688ef786a28294"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "19bb6f6d7d2b5ec8847b9657c0984fbcf2ac381f"
+before_commit = "7b53e470dc36f6049a926e07f155224ccdcab9cf"
+issue_number = "72"
+pr_number = "73"
+modified_modules = ["shardingsphere-elasticjob-lite-ui/shardingsphere-elasticjob-lite-ui-backend", "shardingsphere-elasticjob-cloud-ui/shardingsphere-elasticjob-cloud-ui-backend"]
+changed_files = ["shardingsphere-elasticjob-lite-ui/shardingsphere-elasticjob-lite-ui-backend/src/main/java/org/apache/shardingsphere/elasticjob/lite/ui/security/AuthenticationFilter.java", "shardingsphere-elasticjob-cloud-ui/shardingsphere-elasticjob-cloud-ui-backend/src/main/java/org/apache/shardingsphere/elasticjob/cloud/ui/security/AuthenticationFilter.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0244989749752579
+reference_p_value = 0.9998375428840518
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/shardingsphere-elasticjob-ui-19bb6f6d7d2b5ec8847b9657c0984fbcf2ac381f:latest"
+image_tag = "ghcr.io/khesoem/shardingsphere-elasticjob-ui-19bb6f6d7d2b5ec8847b9657c0984fbcf2ac381f:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "netty__netty-15b8bbf86468"
+org = "jeto-bench"
+description = "Reduce execution time of buffer,common in netty/netty"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "netty/netty"
+ref = "15b8bbf864680ec2250c72d52b35ed46bfaf3a6f^"
+reference = "https://github.com/netty/netty/commit/15b8bbf864680ec2250c72d52b35ed46bfaf3a6f"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:9dffea6c248a5f2962f64eef91a697c8c49b622c4d609d273d91fd546bb0af06"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "15b8bbf864680ec2250c72d52b35ed46bfaf3a6f"
+issue_number = "15503"
+modified_modules = ["buffer", "common"]
+changed_files = ["buffer/src/main/java/io/netty/buffer/UnpooledDirectByteBuf.java", "common/src/main/java/io/netty/util/internal/PlatformDependent.java", "common/src/main/java/io/netty/util/internal/VarHandleFactory.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0180008523130829
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/netty-15b8bbf864680ec2250c72d52b35ed46bfaf3a6f:latest"
+image_tag = "ghcr.io/khesoem/netty-15b8bbf864680ec2250c72d52b35ed46bfaf3a6f:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

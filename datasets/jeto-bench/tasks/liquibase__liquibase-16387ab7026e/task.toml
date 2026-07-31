@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "liquibase__liquibase-16387ab7026e"
+org = "jeto-bench"
+description = "Reduce execution time of liquibase-standard in liquibase/liquibase"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "liquibase/liquibase"
+ref = "6c018c37c8afe5346d438ed424912b84ba25fc4c"
+reference = "https://github.com/liquibase/liquibase/commit/16387ab7026e20c52845c18cd6e32465e0ac80c6"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:c313cdd0cdcbafb8b1f744a85005f97d50faaad9661893ef514a7aafc33eb521"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "16387ab7026e20c52845c18cd6e32465e0ac80c6"
+before_commit = "6c018c37c8afe5346d438ed424912b84ba25fc4c"
+issue_number = "6096"
+pr_number = "6097"
+modified_modules = ["liquibase-standard"]
+changed_files = ["liquibase-standard/src/main/java/liquibase/statement/ExecutablePreparedStatementBase.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0038941283549458
+reference_p_value = 0.9998375428840518
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/liquibase-16387ab7026e20c52845c18cd6e32465e0ac80c6:latest"
+image_tag = "ghcr.io/khesoem/liquibase-16387ab7026e20c52845c18cd6e32465e0ac80c6:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

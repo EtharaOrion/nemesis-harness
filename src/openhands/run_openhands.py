@@ -1,4 +1,5 @@
 import os
+import shutil
 from src.gh.commit_analysis.commit_static_analyzer import RepoAnalyzer
 from src.utils import run_cmd, pull_image_install_git, create_tmp_container
 from src import config
@@ -122,7 +123,7 @@ class OpenHandsRunner:
 
     def _create_config_file(self, openhands_files_path: str, task_type: str) -> str:
         config_template = open(os.path.join(config.openhands['openhands-files-dir'], 'config.toml')).read()
-        config_content = config_template.replace('{working-dir}', self.working_dir).replace('{api-key}', config.openhands['llm-api-key']).replace('{model}', config.openhands['llm-model']).replace('{max-iterations}', str(config.openhands['max-iterations'])).replace('{workspace}', TASK_TYPE_TO_PATHS[task_type]['workspace'])
+        config_content = config_template.replace('{working-dir}', self.working_dir).replace('{api-key}', config.openhands['llm-api-key']).replace('{model}', config.openhands['llm-model']).replace('{base-url}', config.openhands['llm-base-url']).replace('{max-iterations}', str(config.openhands['max-iterations'])).replace('{workspace}', TASK_TYPE_TO_PATHS[task_type]['workspace'])
         config_file_path = os.path.join(openhands_files_path, 'config.toml')
         with open(config_file_path, 'w') as f:
             f.write(config_content)
@@ -130,7 +131,7 @@ class OpenHandsRunner:
     
     def _create_command_file(self, image_name: str, workspace_path: str, openhands_files_path: str, task_type: str) -> str:
         command_template = open(os.path.join(config.openhands['openhands-files-dir'], 'command.sh')).read()
-        command_content = command_template.replace('{image}', image_name).replace('{workspace_path}', workspace_path).replace('{openhands_files_path}', openhands_files_path).replace('{gh-token}', self.gh_token).replace('{task-type}', task_type)
+        command_content = command_template.replace('{image}', image_name).replace('{workspace_path}', workspace_path).replace('{openhands_files_path}', openhands_files_path).replace('{gh-token}', self.gh_token).replace('{task-type}', task_type).replace('{docker-socket}', config.openhands['docker-socket'])
 
         command_file_path = os.path.join(self.working_dir, 'command.sh')
         with open(command_file_path, 'w') as f:
@@ -151,12 +152,15 @@ class OpenHandsRunner:
         self._create_command_file(image_name, workspace_path, openhands_files_dir, task_type)
 
     def _run_openhands(self) -> None:
-        cmd = [
-            "timeout",
-            str(config.openhands['llm-timeout']),
-            "bash",
-            "./command.sh",
-        ]
+        # macOS has no GNU `timeout`; use `gtimeout` (brew coreutils) when
+        # present and otherwise run uncapped rather than dying on ENOENT.
+        timeout_bin = shutil.which("timeout") or shutil.which("gtimeout")
+        if timeout_bin:
+            cmd = [timeout_bin, str(config.openhands['llm-timeout'])]
+        else:
+            logging.warning("No timeout/gtimeout on PATH — running OpenHands without a time cap")
+            cmd = []
+        cmd += ["bash", "./command.sh"]
         run_cmd(cmd, self.working_dir, capture_output=False)
 
     def _backup_and_clean_openhands_files(self, commit: str) -> None:

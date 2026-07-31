@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__shardingsphere-70c03e10c026"
+org = "jeto-bench"
+description = "Reduce execution time of shardingsphere-infra/shardingsphere-infra-context in apache/shardingsphere"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/shardingsphere"
+ref = "f37aba24021cecb2f1460add62d701ce9e3e5f1b"
+reference = "https://github.com/apache/shardingsphere/commit/70c03e10c026734033e6c146df0414e65daa7a9d"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:f977b01c14f680ec526e2aaf1d513a6917d1222f9abe213128898b75a1174033"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "70c03e10c026734033e6c146df0414e65daa7a9d"
+before_commit = "f37aba24021cecb2f1460add62d701ce9e3e5f1b"
+issue_number = "14714"
+pr_number = "14717"
+modified_modules = ["shardingsphere-infra/shardingsphere-infra-context"]
+changed_files = ["shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/DropTableStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/MetaDataRefreshEngine.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/DropViewStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/CreateIndexStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/AlterIndexStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/CreateViewStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/CreateTableStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/DropIndexStatementSchemaRefresher.java", "shardingsphere-infra/shardingsphere-infra-context/src/main/java/org/apache/shardingsphere/infra/context/refresher/type/AlterTableStatementSchemaRefresher.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0021761272993801
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/shardingsphere-70c03e10c026734033e6c146df0414e65daa7a9d:latest"
+image_tag = "ghcr.io/khesoem/shardingsphere-70c03e10c026734033e6c146df0414e65daa7a9d:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

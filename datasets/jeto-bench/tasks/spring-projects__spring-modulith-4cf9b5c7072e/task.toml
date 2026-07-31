@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "spring-projects__spring-modulith-4cf9b5c7072e"
+org = "jeto-bench"
+description = "Reduce execution time of spring-modulith-core in spring-projects/spring-modulith"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "spring-projects/spring-modulith"
+ref = "4cf9b5c7072e9e88f1c0897f9f7d8bf703c0fdae^"
+reference = "https://github.com/spring-projects/spring-modulith/commit/4cf9b5c7072e9e88f1c0897f9f7d8bf703c0fdae"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:a661ba2f3ecd61d27b5d8466e94ac7b0b86ce84495222bd697a48ffb3a628a8c"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "4cf9b5c7072e9e88f1c0897f9f7d8bf703c0fdae"
+issue_number = "1149"
+modified_modules = ["spring-modulith-core"]
+changed_files = ["spring-modulith-core/src/main/java/org/springframework/modulith/core/ApplicationModules.java", "spring-modulith-core/src/main/java/org/springframework/modulith/core/ApplicationModule.java", "spring-modulith-core/src/main/java/org/springframework/modulith/core/Classes.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0227937296631782
+reference_p_value = 0.9786130273714662
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/spring-modulith-4cf9b5c7072e9e88f1c0897f9f7d8bf703c0fdae:latest"
+image_tag = "ghcr.io/khesoem/spring-modulith-4cf9b5c7072e9e88f1c0897f9f7d8bf703c0fdae:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

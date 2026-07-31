@@ -4,7 +4,7 @@ docker run \
 	-e SANDBOX_VOLUMES={workspace_path}:/workspace:rw \
 	-e LOG_ALL_EVENTS=true \
 	-e GITHUB_TOKEN={gh-token} \
-	-v /var/run/docker-ketemadi/docker.sock:/var/run/docker.sock \
+	-v {docker-socket}:/var/run/docker.sock \
 	-v {openhands_files_path}:/openhands-files \
 	--add-host host.docker.internal:host-gateway \
 	--name openhands-cli-$(date +%Y%m%d%H%M%S) \

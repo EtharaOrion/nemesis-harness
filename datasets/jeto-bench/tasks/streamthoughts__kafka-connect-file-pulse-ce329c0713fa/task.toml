@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "streamthoughts__kafka-connect-file-pulse-ce329c0713fa"
+org = "jeto-bench"
+description = "Reduce execution time of connect-file-pulse-filesystems/filepulse-amazons3-fs in streamthoughts/kafka-connect-file-pulse"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "streamthoughts/kafka-connect-file-pulse"
+ref = "ce329c0713fad5bcf6ee07ca0a182276b3583b07^"
+reference = "https://github.com/streamthoughts/kafka-connect-file-pulse/commit/ce329c0713fad5bcf6ee07ca0a182276b3583b07"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:80d5cac87c6970a2cbd4680518e383f49accf5cbbe26264ce499dcef4325fe72"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "ce329c0713fad5bcf6ee07ca0a182276b3583b07"
+issue_number = "490"
+modified_modules = ["connect-file-pulse-filesystems/filepulse-amazons3-fs"]
+changed_files = ["connect-file-pulse-filesystems/filepulse-amazons3-fs/src/main/java/io/streamthoughts/kafka/connect/filepulse/fs/AmazonS3Storage.java", "connect-file-pulse-filesystems/filepulse-amazons3-fs/src/main/java/io/streamthoughts/kafka/connect/filepulse/fs/AmazonS3FileSystemListing.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0062528198991701
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/kafka-connect-file-pulse-ce329c0713fad5bcf6ee07ca0a182276b3583b07:latest"
+image_tag = "ghcr.io/khesoem/kafka-connect-file-pulse-ce329c0713fad5bcf6ee07ca0a182276b3583b07:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

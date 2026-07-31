@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-aa91f6027801"
+org = "jeto-bench"
+description = "Reduce execution time of server-spi-private in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "aa91f6027801d198e68409bc8b907761fe08c776^"
+reference = "https://github.com/keycloak/keycloak/commit/aa91f6027801d198e68409bc8b907761fe08c776"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:b2e3a7974c6342eb33d58f035bb3a1c9d26063daa7b849a2739e65b92f516516"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "aa91f6027801d198e68409bc8b907761fe08c776"
+issue_number = "31519"
+modified_modules = ["server-spi-private"]
+changed_files = ["server-spi-private/src/main/java/org/keycloak/authorization/policy/evaluation/DefaultEvaluation.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0065077997894536
+reference_p_value = 0.9992845468223096
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-aa91f6027801d198e68409bc8b907761fe08c776:latest"
+image_tag = "ghcr.io/khesoem/keycloak-aa91f6027801d198e68409bc8b907761fe08c776:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

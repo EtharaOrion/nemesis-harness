@@ -1,0 +1,555 @@
+{
+  "version": "1.0",
+  "org": "jeto-bench",
+  "built_at": "2026-07-31T11:44:50+00:00",
+  "spec_version": "0.2.0",
+  "pipeline": "jeto_exec_time",
+  "tasks": [
+    {
+      "task_id": "keycloak__keycloak-47288a96439b",
+      "path": "tasks/keycloak__keycloak-47288a96439b",
+      "content_hash": "sha256:b653c600d5a0e86a21378eacf9a7bfda5c877984f798888bca52f317e9ba5547",
+      "image": "ghcr.io/khesoem/keycloak-47288a96439bb3e6db587ea37ceece7e96665320:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-02dfb4bd8a29",
+      "path": "tasks/keycloak__keycloak-02dfb4bd8a29",
+      "content_hash": "sha256:283c5333c6f4337043ec75536e34ea37fcc03bbbc9293c61a569ee6f15072fab",
+      "image": "ghcr.io/khesoem/keycloak-02dfb4bd8a29dd7b83a34130cce956f2d910b9cf:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-10f06e9eb7c2",
+      "path": "tasks/keycloak__keycloak-10f06e9eb7c2",
+      "content_hash": "sha256:4578c8bbd93dfe972398df65b94eaeb86f3331ea5a05695e650655607396614c",
+      "image": "ghcr.io/khesoem/keycloak-10f06e9eb7c23aadb14e564b469f4b39f7af1e6f:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-66b9e801c122",
+      "path": "tasks/keycloak__keycloak-66b9e801c122",
+      "content_hash": "sha256:0948e2403bbac94c3126187a90a4e3a818c1e139a9fd71677575dffae4e3dcb0",
+      "image": "ghcr.io/khesoem/keycloak-66b9e801c122b8fe9c1bc661357198eeb1d04d5c:latest"
+    },
+    {
+      "task_id": "netty__netty-15b8bbf86468",
+      "path": "tasks/netty__netty-15b8bbf86468",
+      "content_hash": "sha256:9dffea6c248a5f2962f64eef91a697c8c49b622c4d609d273d91fd546bb0af06",
+      "image": "ghcr.io/khesoem/netty-15b8bbf864680ec2250c72d52b35ed46bfaf3a6f:latest"
+    },
+    {
+      "task_id": "netty__netty-48687be377c1",
+      "path": "tasks/netty__netty-48687be377c1",
+      "content_hash": "sha256:271003bed1ae6882bc0362064c846b3dece5f766a73dd53e28e8d3725036047f",
+      "image": "ghcr.io/khesoem/netty-48687be377c1e0b94acddca4ae54eff996c1ee2a:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-971016f74346",
+      "path": "tasks/keycloak__keycloak-971016f74346",
+      "content_hash": "sha256:6dc34a9406b279ed3563a0982bab28a6799046508b0bfa41d226ca7dbb2d0a94",
+      "image": "ghcr.io/khesoem/keycloak-971016f74346955c71f1b4fcb45be1e43abb9f8b:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-d74e71e5ed1a",
+      "path": "tasks/keycloak__keycloak-d74e71e5ed1a",
+      "content_hash": "sha256:e4f47e20a56ff45378d5d83db2c04782599d6d74c391ed6bca8cb3ca23369a3a",
+      "image": "ghcr.io/khesoem/keycloak-d74e71e5ed1a55cf55835339c819c1f68c3f6126:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-4fc065aadc51",
+      "path": "tasks/keycloak__keycloak-4fc065aadc51",
+      "content_hash": "sha256:bb54e91cc7988c87e482f757008b905e8fbf39c519cea54f6e73adff72a37703",
+      "image": "ghcr.io/khesoem/keycloak-4fc065aadc5146c938ecf842a1548ef67f1ecdb3:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-a43b65281d6f",
+      "path": "tasks/keycloak__keycloak-a43b65281d6f",
+      "content_hash": "sha256:7d7d1a24239871688c4db24b3a0734da70d4e184e826b750abc3cc80b188d7e9",
+      "image": "ghcr.io/khesoem/keycloak-a43b65281d6f3631366b71858cad25676aaf635d:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-347cd3b9b971",
+      "path": "tasks/keycloak__keycloak-347cd3b9b971",
+      "content_hash": "sha256:4ba748b5ab77eb62e11fea1f2f5f476550560b9ffdf2383a938c22867789d921",
+      "image": "ghcr.io/khesoem/keycloak-347cd3b9b971495c45ad8590077e7fbf86065b4e:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-3887ee3006fc",
+      "path": "tasks/keycloak__keycloak-3887ee3006fc",
+      "content_hash": "sha256:baae60c34c141ad048bdcda8bfcdc9a31fcb9e0e7b911735100e4c4ef88026d5",
+      "image": "ghcr.io/khesoem/keycloak-3887ee3006fce7af5e6321f4aefe062e9cdd20c7:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-aa91f6027801",
+      "path": "tasks/keycloak__keycloak-aa91f6027801",
+      "content_hash": "sha256:b2e3a7974c6342eb33d58f035bb3a1c9d26063daa7b849a2739e65b92f516516",
+      "image": "ghcr.io/khesoem/keycloak-aa91f6027801d198e68409bc8b907761fe08c776:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-00d8e06f7995",
+      "path": "tasks/keycloak__keycloak-00d8e06f7995",
+      "content_hash": "sha256:fb97eea976390785ba09afc056106c6df099fd7bcb5156431a4dc36dc31e7055",
+      "image": "ghcr.io/khesoem/keycloak-00d8e06f7995eafe061ac2d407869372d3be3c3e:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-557cf1e60e2a",
+      "path": "tasks/keycloak__keycloak-557cf1e60e2a",
+      "content_hash": "sha256:5350ee2fc8821d5fe208a01ee71ff80141b531e6d21bf597a42cc06db610bf09",
+      "image": "ghcr.io/khesoem/keycloak-557cf1e60e2ab67d43f1ea02c8037078705cc0a6:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-673e122443f3",
+      "path": "tasks/keycloak__keycloak-673e122443f3",
+      "content_hash": "sha256:cc98f47d6b2a44fbd5043735a99531c457ea3f96092daba5d332518a17abbd68",
+      "image": "ghcr.io/khesoem/keycloak-673e122443f3bd535563a28e50ca55bdb63d0ff7:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-ae1aaef96c80",
+      "path": "tasks/keycloak__keycloak-ae1aaef96c80",
+      "content_hash": "sha256:31d9f2a7d18ac10bd0b58523f402c82071c4d29736cc0fda1d5fc2e43a2db8d0",
+      "image": "ghcr.io/khesoem/keycloak-ae1aaef96c80563c7d78ed617556fbbd91d7ad30:latest"
+    },
+    {
+      "task_id": "liquibase__liquibase-d534727e88c6",
+      "path": "tasks/liquibase__liquibase-d534727e88c6",
+      "content_hash": "sha256:7f8356976f23aebd657140ca4d977a200af8f6a9764bb24f9212a76ce84dbee5",
+      "image": "ghcr.io/khesoem/liquibase-d534727e88c6ecd17678ee92fe27276deb5c865a:latest"
+    },
+    {
+      "task_id": "liquibase__liquibase-867f787fccb8",
+      "path": "tasks/liquibase__liquibase-867f787fccb8",
+      "content_hash": "sha256:f83943e72d3dc9810b8d1e324eae62a878e3583be90853108c3e0f6c01f4ec82",
+      "image": "ghcr.io/khesoem/liquibase-867f787fccb8e069c973d27ebb27ad6ce8bbb35a:latest"
+    },
+    {
+      "task_id": "liquibase__liquibase-3daa688c6a99",
+      "path": "tasks/liquibase__liquibase-3daa688c6a99",
+      "content_hash": "sha256:7f41e8a5b96fb457ffbef923274e015796c1cf50686c6cbf404e99c4a1e40e99",
+      "image": "ghcr.io/khesoem/liquibase-3daa688c6a99ed131687036ba4e40cd743c4b3c8:latest"
+    },
+    {
+      "task_id": "rabbitmq__rabbitmq-perf-test-43f4a009a609",
+      "path": "tasks/rabbitmq__rabbitmq-perf-test-43f4a009a609",
+      "content_hash": "sha256:1b18b78f2b411df2b8f15b1c2d303d5764ce982b39a580ed259a33b23a838353",
+      "image": "ghcr.io/khesoem/rabbitmq-perf-test-43f4a009a609a161208a842dd833ef8ef9dfd914:latest"
+    },
+    {
+      "task_id": "kadai-io__kadai-ba2bc94259a6",
+      "path": "tasks/kadai-io__kadai-ba2bc94259a6",
+      "content_hash": "sha256:e5e220eaf183b2c32f49f2567335de0efd313345e190d71cf682ac494a79d561",
+      "image": "ghcr.io/khesoem/kadai-ba2bc94259a61282f7491622f9e9320a3acd92fd:latest"
+    },
+    {
+      "task_id": "kadai-io__kadai-a3afea91d441",
+      "path": "tasks/kadai-io__kadai-a3afea91d441",
+      "content_hash": "sha256:464be400a99ce225e2eabfcacb63089f597b958276c35d18423f9ab4a7b627d3",
+      "image": "ghcr.io/khesoem/kadai-a3afea91d4418ba474c3a805de71350288f61ca9:latest"
+    },
+    {
+      "task_id": "apache__dubbo-78d527788d6f",
+      "path": "tasks/apache__dubbo-78d527788d6f",
+      "content_hash": "sha256:27530c3978374c949fdf529d3a7689d8f5bb514b74d003cf8e39555a38a5b518",
+      "image": "ghcr.io/khesoem/dubbo-78d527788d6fdc2d27e33261299f20db65f74139:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-8ed9ce29d159",
+      "path": "tasks/keycloak__keycloak-8ed9ce29d159",
+      "content_hash": "sha256:a0780fa3100ae43045a1bb1cb6fba8aab6057f5c49550975d73d3c85c00b5488",
+      "image": "ghcr.io/khesoem/keycloak-8ed9ce29d159d10728ada8da708dab111921b024:latest"
+    },
+    {
+      "task_id": "OpenAPITools__openapi-generator-196c2b164245",
+      "path": "tasks/OpenAPITools__openapi-generator-196c2b164245",
+      "content_hash": "sha256:e92db5fdca9e41fe11f6223f21ffb22359184fee887d474a97e1089654daeb30",
+      "image": "ghcr.io/khesoem/openapi-generator-196c2b1642453c15e33bbdb6677339468b1a5d7f:latest"
+    },
+    {
+      "task_id": "mhewedy__spring-data-jpa-mongodb-expressions-45e0e1c3f1ab",
+      "path": "tasks/mhewedy__spring-data-jpa-mongodb-expressions-45e0e1c3f1ab",
+      "content_hash": "sha256:b63e1bc8df569c3e54b700ed6739ebe94af3ad0a6816a0db8179c67307585930",
+      "image": "ghcr.io/khesoem/spring-data-jpa-mongodb-expressions-45e0e1c3f1abff6c9a457905b80cb884f8a23487:latest"
+    },
+    {
+      "task_id": "pgjdbc__r2dbc-postgresql-9078212d0723",
+      "path": "tasks/pgjdbc__r2dbc-postgresql-9078212d0723",
+      "content_hash": "sha256:c6dae0cb550646425eca75403916a4abd63a2b23078a41f438d87cc324d17316",
+      "image": "ghcr.io/khesoem/r2dbc-postgresql-9078212d0723467dd6dbfcf1f62511fc4733fa0d:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-modulith-01d7a35d2dc2",
+      "path": "tasks/spring-projects__spring-modulith-01d7a35d2dc2",
+      "content_hash": "sha256:28731c97d0ed3110def25cd16cc595127b9d00f509d3017c8e3952d632312f11",
+      "image": "ghcr.io/khesoem/spring-modulith-01d7a35d2dc2b340462ab38b4f2a6e1031d991b6:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-modulith-711c8449fa8f",
+      "path": "tasks/spring-projects__spring-modulith-711c8449fa8f",
+      "content_hash": "sha256:91d28da1a83110d0e3bf861bc534240b4e48679289b383e73206b6a8e12162be",
+      "image": "ghcr.io/khesoem/spring-modulith-711c8449fa8f0494650d95ff6d23d8c3e474a8df:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-modulith-5f725621c6b6",
+      "path": "tasks/spring-projects__spring-modulith-5f725621c6b6",
+      "content_hash": "sha256:40df1c8a5d4d4b33bcbd088b65eae1573d41d429a8de8b8eba9dca21cc591d33",
+      "image": "ghcr.io/khesoem/spring-modulith-5f725621c6b6f83404168784fae772508e21a21b:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-modulith-4cf9b5c7072e",
+      "path": "tasks/spring-projects__spring-modulith-4cf9b5c7072e",
+      "content_hash": "sha256:a661ba2f3ecd61d27b5d8466e94ac7b0b86ce84495222bd697a48ffb3a628a8c",
+      "image": "ghcr.io/khesoem/spring-modulith-4cf9b5c7072e9e88f1c0897f9f7d8bf703c0fdae:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-modulith-083ce7beae11",
+      "path": "tasks/spring-projects__spring-modulith-083ce7beae11",
+      "content_hash": "sha256:169f26f852197149b1ccfea3591f55f0dfbb89ba2ab19020f67340064e16793f",
+      "image": "ghcr.io/khesoem/spring-modulith-083ce7beae11f7872e5f143dd860dc39a0eb9f7f:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-modulith-0de48790d7e9",
+      "path": "tasks/spring-projects__spring-modulith-0de48790d7e9",
+      "content_hash": "sha256:d6a143a96240ae395cdeb924117ad466f25c6d4083227dd28fddf22265a4a3a9",
+      "image": "ghcr.io/khesoem/spring-modulith-0de48790d7e98785d82f7e0668f1a75036f9c152:latest"
+    },
+    {
+      "task_id": "gluonhq__rich-text-area-4bfda0aeee99",
+      "path": "tasks/gluonhq__rich-text-area-4bfda0aeee99",
+      "content_hash": "sha256:0c0ac1768bc08e8a6001b429e75789a5ad71f651250054722cfe9c31b92ecf45",
+      "image": "ghcr.io/khesoem/rich-text-area-4bfda0aeee99e29af06d711c60f465daa3044261:latest"
+    },
+    {
+      "task_id": "streamthoughts__kafka-connect-file-pulse-ce329c0713fa",
+      "path": "tasks/streamthoughts__kafka-connect-file-pulse-ce329c0713fa",
+      "content_hash": "sha256:80d5cac87c6970a2cbd4680518e383f49accf5cbbe26264ce499dcef4325fe72",
+      "image": "ghcr.io/khesoem/kafka-connect-file-pulse-ce329c0713fad5bcf6ee07ca0a182276b3583b07:latest"
+    },
+    {
+      "task_id": "mock-server__mockserver-4509035c3c0f",
+      "path": "tasks/mock-server__mockserver-4509035c3c0f",
+      "content_hash": "sha256:3da21dc42c92797a5aab6ca84bb2c674d3ee2cde8fc3a1e9ccccf17af1164717",
+      "image": "ghcr.io/khesoem/mockserver-4509035c3c0f09a80571bab2878c6a622a08462e:latest"
+    },
+    {
+      "task_id": "spring-cloud__spring-cloud-sleuth-382f4a0da786",
+      "path": "tasks/spring-cloud__spring-cloud-sleuth-382f4a0da786",
+      "content_hash": "sha256:e2c1eb5fab9266e72c02388e5f97b3349fe27786800b46420c03e703ede8e9d2",
+      "image": "ghcr.io/khesoem/spring-cloud-sleuth-382f4a0da786bea63159fa4e9593906b729c7b88:latest"
+    },
+    {
+      "task_id": "apiman__apiman-29fb6a19c683",
+      "path": "tasks/apiman__apiman-29fb6a19c683",
+      "content_hash": "sha256:b637742bd50b6a2a22f3a72062847de5b27f6bf2a1f3be54dd9ba5550d910fff",
+      "image": "ghcr.io/khesoem/apiman-29fb6a19c683ca5edba4a283209bb89026dc0f47:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-2acfd41b19b7",
+      "path": "tasks/keycloak__keycloak-2acfd41b19b7",
+      "content_hash": "sha256:8203e895318f9901ce1d3ea0779bd4caa60b7aa3ec8ed6d7aee0f12c0c217a71",
+      "image": "ghcr.io/khesoem/keycloak-2acfd41b19b7fbe459450145debf547aed375b4b:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-f7ee930a2718",
+      "path": "tasks/keycloak__keycloak-f7ee930a2718",
+      "content_hash": "sha256:80f736181fc6b1ea57911c56661fc21f81766821312edf728d352301fbda2fce",
+      "image": "ghcr.io/khesoem/keycloak-f7ee930a2718ac1bcf3f65d713b3863d675341c8:latest"
+    },
+    {
+      "task_id": "apache__incubator-seata-b52ad6dcc77b",
+      "path": "tasks/apache__incubator-seata-b52ad6dcc77b",
+      "content_hash": "sha256:0057d94ec531d514af9549d82a43f6976ed2307257190cc0bb32d7c2a351ef55",
+      "image": "ghcr.io/khesoem/incubator-seata-b52ad6dcc77b9b559d24ce759bae51955e4f1d3e:latest"
+    },
+    {
+      "task_id": "mybatis__mybatis-3-ddd931bd0959",
+      "path": "tasks/mybatis__mybatis-3-ddd931bd0959",
+      "content_hash": "sha256:b36b084b9a7b8a8816779e292f5062b824463cfb8032523eff352e9a9e4450e9",
+      "image": "ghcr.io/khesoem/mybatis-3-ddd931bd095923ccdb199dedd1fd82065bf5d6a7:latest"
+    },
+    {
+      "task_id": "mybatis__mybatis-3-8690d60cad1f",
+      "path": "tasks/mybatis__mybatis-3-8690d60cad1f",
+      "content_hash": "sha256:80a469c1fb172cbcce3bf3a68907ce71f6fbace791dfb606c6b49781a4632547",
+      "image": "ghcr.io/khesoem/mybatis-3-8690d60cad1f397102859104fee1f6e6056a0593:latest"
+    },
+    {
+      "task_id": "quarkusio__quarkus-3133199cbb45",
+      "path": "tasks/quarkusio__quarkus-3133199cbb45",
+      "content_hash": "sha256:9943e0e7121d6439c715965f915ae56672ba7c047335d0cfb412785970b8b6fc",
+      "image": "ghcr.io/khesoem/quarkus-3133199cbb457886e53e8a11131ef35561da01ce:latest"
+    },
+    {
+      "task_id": "quarkusio__quarkus-82db6e06e605",
+      "path": "tasks/quarkusio__quarkus-82db6e06e605",
+      "content_hash": "sha256:1fe626fdf5db78fd19da4e22dcb221d3a7855ac27d6f5241f1946a8b6481e6ef",
+      "image": "ghcr.io/khesoem/quarkus-82db6e06e60546d73d18b2bdd7cfc3b5791da8ac:latest"
+    },
+    {
+      "task_id": "spring-cloud__spring-cloud-function-a7f5a22ec6f5",
+      "path": "tasks/spring-cloud__spring-cloud-function-a7f5a22ec6f5",
+      "content_hash": "sha256:29b9f379b2a4e504e407d57fdb27d5f550b6df1df1902197af3bea62165e3ca0",
+      "image": "ghcr.io/khesoem/spring-cloud-function-a7f5a22ec6f5690f6425074d679781399c6897c0:latest"
+    },
+    {
+      "task_id": "spring-cloud__spring-cloud-function-8ab157de7676",
+      "path": "tasks/spring-cloud__spring-cloud-function-8ab157de7676",
+      "content_hash": "sha256:5e45a58aa2503e609f5fb28e59470dc6f3f2ec07fc3a9f5901b16b06b94feeb2",
+      "image": "ghcr.io/khesoem/spring-cloud-function-8ab157de7676d02e97ba5e06cd3fd6d848fecd2d:latest"
+    },
+    {
+      "task_id": "spring-projects__spring-data-elasticsearch-8b43af2d333a",
+      "path": "tasks/spring-projects__spring-data-elasticsearch-8b43af2d333a",
+      "content_hash": "sha256:be13f0000be2318438fbba6df8d73c7b98f1764663cdf437bc9e6f39f9b3e91a",
+      "image": "ghcr.io/khesoem/spring-data-elasticsearch-8b43af2d333a294d334c09e2b44f7734d014c644:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-2c4c5c83f685",
+      "path": "tasks/neo4j__neo4j-ogm-2c4c5c83f685",
+      "content_hash": "sha256:76cb0a608f85bfbdf46647655ded187fe84671833fe74abd3ad87652676ced04",
+      "image": "ghcr.io/khesoem/neo4j-ogm-2c4c5c83f6850fa3793be5f55f105480fe316801:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-a26d814a4c50",
+      "path": "tasks/neo4j__neo4j-ogm-a26d814a4c50",
+      "content_hash": "sha256:b1c855dede7a4da285a09468564f63d511e221971ac5fee9aaef398f2fdf284b",
+      "image": "ghcr.io/khesoem/neo4j-ogm-a26d814a4c50a3d20ac70daf16fd2bbdaa3bf544:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-f20d9f02edf4",
+      "path": "tasks/neo4j__neo4j-ogm-f20d9f02edf4",
+      "content_hash": "sha256:13a7e7e8a9e7dc44a49b12895505b7a23bd6687396a9ddf050e85f648e2b571e",
+      "image": "ghcr.io/khesoem/neo4j-ogm-f20d9f02edf49a0968bbbf6fdc0e0a63c250449c:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-b160b9a56f55",
+      "path": "tasks/neo4j__neo4j-ogm-b160b9a56f55",
+      "content_hash": "sha256:889cf461f66c530064be340251a3ae2a8ff2b99db6845052eba5854e2e361074",
+      "image": "ghcr.io/khesoem/neo4j-ogm-b160b9a56f5569e37df6c41ba78981fa3990ac33:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-81bf93a9547f",
+      "path": "tasks/neo4j__neo4j-ogm-81bf93a9547f",
+      "content_hash": "sha256:e146e39de0950f450e2d0825471535273fc26c09113e1bcf74cc0e5ee8d20bef",
+      "image": "ghcr.io/khesoem/neo4j-ogm-81bf93a9547f41aa02552b80642cc1b03bdd1e2d:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-502bf977ec4b",
+      "path": "tasks/neo4j__neo4j-ogm-502bf977ec4b",
+      "content_hash": "sha256:3aeac1e851d6ffa8f18f6f291c9692a23b0d59e6557becba13ae6825c985162b",
+      "image": "ghcr.io/khesoem/neo4j-ogm-502bf977ec4bbf9605b96c0bf8cd326892481e6f:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-730d88579594",
+      "path": "tasks/neo4j__neo4j-ogm-730d88579594",
+      "content_hash": "sha256:75cb2ef92052dc2a5ff903ce389f7ca7e6a18aa0fd4a7ede39c7814f2f1c8cf7",
+      "image": "ghcr.io/khesoem/neo4j-ogm-730d885795942df5a75f1ea97255209872965353:latest"
+    },
+    {
+      "task_id": "neo4j__neo4j-ogm-2df1b3d6d5f9",
+      "path": "tasks/neo4j__neo4j-ogm-2df1b3d6d5f9",
+      "content_hash": "sha256:fbc4782bf7657e426ca339d737e2aa76bb384d6caad17ba30deb1268e46ded93",
+      "image": "ghcr.io/khesoem/neo4j-ogm-2df1b3d6d5f96c8202afe760ef41da4af84d0b76:latest"
+    },
+    {
+      "task_id": "spring-cloud__spring-cloud-circuitbreaker-7a9b097e0be9",
+      "path": "tasks/spring-cloud__spring-cloud-circuitbreaker-7a9b097e0be9",
+      "content_hash": "sha256:d46102874981a9833e260b50b3db3e275fbde552f49bcd03911c1dfaed04c3db",
+      "image": "ghcr.io/khesoem/spring-cloud-circuitbreaker-7a9b097e0be96c8954924f4b6aa550e6ac3862fe:latest"
+    },
+    {
+      "task_id": "alibaba__canal-dd93e2b0c4b4",
+      "path": "tasks/alibaba__canal-dd93e2b0c4b4",
+      "content_hash": "sha256:934f80870e59231cf21b0ba5463dd31a7754f7fd474340d672b293d92ce9595b",
+      "image": "ghcr.io/khesoem/canal-dd93e2b0c4b4479e052da2c63d3065a2ad5108b2:latest"
+    },
+    {
+      "task_id": "alibaba__canal-0fb717a97f2b",
+      "path": "tasks/alibaba__canal-0fb717a97f2b",
+      "content_hash": "sha256:c1124d962ff556c4dc1230989b1fa0ca96ce18e136e1f71e78302b55e11728c7",
+      "image": "ghcr.io/khesoem/canal-0fb717a97f2b954908b6756e17d97304e0b1ea27:latest"
+    },
+    {
+      "task_id": "apache__dubbo-2905d975d4fe",
+      "path": "tasks/apache__dubbo-2905d975d4fe",
+      "content_hash": "sha256:3195e8c54755c9304650fd7cfae36fda5cebe706256fcf9f4237f5380921f440",
+      "image": "ghcr.io/khesoem/dubbo-2905d975d4fefaa27e7630ae70aa1597f48e968a:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-28464f498862",
+      "path": "tasks/keycloak__keycloak-28464f498862",
+      "content_hash": "sha256:5e54d28084f9a0772fa0b8d048463a8fff4638d34b6d0537fcbac92f2ee8c6ad",
+      "image": "ghcr.io/khesoem/keycloak-28464f4988625475e0bf5c312a6ffcb454699e02:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-dab8f97d6839",
+      "path": "tasks/keycloak__keycloak-dab8f97d6839",
+      "content_hash": "sha256:c81d66c52252ffd2970a5c2408d18f802221edcbe7ed6fcadb7b43f6481eb825",
+      "image": "ghcr.io/khesoem/keycloak-dab8f97d683947b6c61ea317e975eda4a4f66f61:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-abcbc7012d18",
+      "path": "tasks/keycloak__keycloak-abcbc7012d18",
+      "content_hash": "sha256:fd4c31a9ed7bfbec2d6bd793a192dd39bd9de2a19a1d8dd5de75fcc8f75439cd",
+      "image": "ghcr.io/khesoem/keycloak-abcbc7012d186f9d5abc4356cf520a8ed332e929:latest"
+    },
+    {
+      "task_id": "keycloak__keycloak-bed80e0b6f81",
+      "path": "tasks/keycloak__keycloak-bed80e0b6f81",
+      "content_hash": "sha256:64dd126cd972d7e1ff83aacd187408855de03635c6934904e655b9a830265c7f",
+      "image": "ghcr.io/khesoem/keycloak-bed80e0b6f8122687551fa4ce12a8b31584e0544:latest"
+    },
+    {
+      "task_id": "apache__incubator-seata-a5e567a92ad9",
+      "path": "tasks/apache__incubator-seata-a5e567a92ad9",
+      "content_hash": "sha256:c3004cee74c430bb7c69a86cc059466a8d11d1347b571d0583cfa2a4a46c4a99",
+      "image": "ghcr.io/khesoem/incubator-seata-a5e567a92ad93edb7e93cd2cac4c9bbe75fc40ad:latest"
+    },
+    {
+      "task_id": "liquibase__liquibase-16387ab7026e",
+      "path": "tasks/liquibase__liquibase-16387ab7026e",
+      "content_hash": "sha256:c313cdd0cdcbafb8b1f744a85005f97d50faaad9661893ef514a7aafc33eb521",
+      "image": "ghcr.io/khesoem/liquibase-16387ab7026e20c52845c18cd6e32465e0ac80c6:latest"
+    },
+    {
+      "task_id": "obsidiandynamics__kafdrop-d5e9f0b73f85",
+      "path": "tasks/obsidiandynamics__kafdrop-d5e9f0b73f85",
+      "content_hash": "sha256:e2ed5110d8b58dcd8c8c3052c8cf112f44b0ea5945110f06ece3271703c682e5",
+      "image": "ghcr.io/khesoem/kafdrop-d5e9f0b73f856196fdece06502d626d1ef05ba23:latest"
+    },
+    {
+      "task_id": "GoogleCloudPlatform__cloud-opensource-java-5b50571dd6d4",
+      "path": "tasks/GoogleCloudPlatform__cloud-opensource-java-5b50571dd6d4",
+      "content_hash": "sha256:eab5a01c7f6c6b889860f1c22a8be07e1caa50e53661557a28a1bf4f4dcd6e08",
+      "image": "ghcr.io/khesoem/cloud-opensource-java-5b50571dd6d40a0327b42b60868c8c85406631a1:latest"
+    },
+    {
+      "task_id": "Altinity__ice-3078e59ca363",
+      "path": "tasks/Altinity__ice-3078e59ca363",
+      "content_hash": "sha256:fec071254989359de5915e118009f9495747ab3084c41258d9049b9f6d3babbf",
+      "image": "ghcr.io/khesoem/ice-3078e59ca36351442558362539748991c18166d1:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-elasticjob-ui-19bb6f6d7d2b",
+      "path": "tasks/apache__shardingsphere-elasticjob-ui-19bb6f6d7d2b",
+      "content_hash": "sha256:831d15d1ff521f5d8c76b035485f04c10c9290035e390e2637688ef786a28294",
+      "image": "ghcr.io/khesoem/shardingsphere-elasticjob-ui-19bb6f6d7d2b5ec8847b9657c0984fbcf2ac381f:latest"
+    },
+    {
+      "task_id": "apache__dubbo-6eb21ee8e61d",
+      "path": "tasks/apache__dubbo-6eb21ee8e61d",
+      "content_hash": "sha256:b183c38a672a05f2e2c89ce544c88e1406af173203a427998d58fc98d9413c5a",
+      "image": "ghcr.io/khesoem/dubbo-6eb21ee8e61d4da51145154108bbd52efebb190c:latest"
+    },
+    {
+      "task_id": "apache__dubbo-a05808239e67",
+      "path": "tasks/apache__dubbo-a05808239e67",
+      "content_hash": "sha256:97f5e54cb73dd602e36e46349d5efbff31ee10392146336a480550bb4c6889b1",
+      "image": "ghcr.io/khesoem/dubbo-a05808239e67174ceefc6e7e5952de5173c23a36:latest"
+    },
+    {
+      "task_id": "apache__incubator-seata-7d72c0200ef3",
+      "path": "tasks/apache__incubator-seata-7d72c0200ef3",
+      "content_hash": "sha256:ce7b33bc41e31bceb417a45212356b9661dba93105eeebb4fb71166abcb1731c",
+      "image": "ghcr.io/khesoem/incubator-seata-7d72c0200ef32c30ca9454bc937e50bbc3fad7d6:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-2c89f897def5",
+      "path": "tasks/apache__shardingsphere-2c89f897def5",
+      "content_hash": "sha256:851aa96532b0f6c48416b6da4c130572e8a18d3168c1b39a998b6788615b065f",
+      "image": "ghcr.io/khesoem/shardingsphere-2c89f897def51ae7df1c953b55e268aee4d357ca:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-70c03e10c026",
+      "path": "tasks/apache__shardingsphere-70c03e10c026",
+      "content_hash": "sha256:f977b01c14f680ec526e2aaf1d513a6917d1222f9abe213128898b75a1174033",
+      "image": "ghcr.io/khesoem/shardingsphere-70c03e10c026734033e6c146df0414e65daa7a9d:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-6795ba6cfb2b",
+      "path": "tasks/apache__shardingsphere-6795ba6cfb2b",
+      "content_hash": "sha256:b1d3959a4e8fc3d02f668cdbc8462ff6799d929950bdcfc0c72f56b1eacd2fde",
+      "image": "ghcr.io/khesoem/shardingsphere-6795ba6cfb2be78956f348bd43fda7ee0e4bd51e:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-49a13e9aaf80",
+      "path": "tasks/apache__shardingsphere-49a13e9aaf80",
+      "content_hash": "sha256:604dcfa81f19cf1d7bdc1c6f4158c45d4bb4c320340104b824b6d1b0b867938e",
+      "image": "ghcr.io/khesoem/shardingsphere-49a13e9aaf8074cf4eba87defe9db6e95c60896d:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-85d70b778bd2",
+      "path": "tasks/apache__shardingsphere-85d70b778bd2",
+      "content_hash": "sha256:efd6394deb345422e4ff4398d3500a9474d0067d7f04066c6021a8172e9769c5",
+      "image": "ghcr.io/khesoem/shardingsphere-85d70b778bd21610bf31651a76dcdd463546be18:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-659f6c55ed09",
+      "path": "tasks/apache__shardingsphere-659f6c55ed09",
+      "content_hash": "sha256:21cff09cca514fff63a08a31cc2125ada52d9ddbc15aa116d4f54d8d9a50f59e",
+      "image": "ghcr.io/khesoem/shardingsphere-659f6c55ed094e7359888f0615eb4f28db84df11:latest"
+    },
+    {
+      "task_id": "apache__shardingsphere-ed3658f85271",
+      "path": "tasks/apache__shardingsphere-ed3658f85271",
+      "content_hash": "sha256:ddcd8e9f489853c1d4cb49de3c9208473c92811eb140d7837561ee33d0c3a883",
+      "image": "ghcr.io/khesoem/shardingsphere-ed3658f85271069e5b50eceac96b351b3d8aceac:latest"
+    },
+    {
+      "task_id": "quarkusio__quarkus-854e87a33606",
+      "path": "tasks/quarkusio__quarkus-854e87a33606",
+      "content_hash": "sha256:7694dd2e74a3792e68514183956dac57a1972d10dbba2d092b8173a9c9024d12",
+      "image": "ghcr.io/khesoem/quarkus-854e87a33606165ddff08f186eb62f95bdf07ebb:latest"
+    },
+    {
+      "task_id": "quarkusio__quarkus-067e88811c98",
+      "path": "tasks/quarkusio__quarkus-067e88811c98",
+      "content_hash": "sha256:823c3df7010ff591605d25e92c4be07557c4c15eb8ce34db649779bb05957c2c",
+      "image": "ghcr.io/khesoem/quarkus-067e88811c98fcf75b38c92c32c283d11960ce01:latest"
+    },
+    {
+      "task_id": "apache__pulsar-5844d4790e1d",
+      "path": "tasks/apache__pulsar-5844d4790e1d",
+      "content_hash": "sha256:a4865310ca05b92733f34770fcf01ccafa4971fa79e7baa09ce3d36c30c2f2c9",
+      "image": "ghcr.io/khesoem/pulsar-5844d4790e1d4caa19d6b71d31ce6f2e374fa2ad:latest"
+    },
+    {
+      "task_id": "apache__pulsar-0021f17028d9",
+      "path": "tasks/apache__pulsar-0021f17028d9",
+      "content_hash": "sha256:adde119226875007b7c681615be68bf07fc1d39015bc616deeaf7af159a7e9ca",
+      "image": "ghcr.io/khesoem/pulsar-0021f17028d9d98602e5d773eca7b6f7a2cfa7e0:latest"
+    },
+    {
+      "task_id": "trinodb__trino-81ae1997fa90",
+      "path": "tasks/trinodb__trino-81ae1997fa90",
+      "content_hash": "sha256:2729dd1d93c349a37b506d918206dfecce6dc5600e437fa47be2e00c8911f8f2",
+      "image": "ghcr.io/khesoem/trino-81ae1997fa90825a1222f603d2302a0c9a16cc0b:latest"
+    },
+    {
+      "task_id": "alibaba__fastjson2-b688be45e583",
+      "path": "tasks/alibaba__fastjson2-b688be45e583",
+      "content_hash": "sha256:a664868cd9868808eb5d0c216534dcd52d02852c67adcec8b7139e67817ce771",
+      "image": "ghcr.io/khesoem/fastjson2-b688be45e5835c07d752495d485e89c2ffdf1fd4:latest"
+    },
+    {
+      "task_id": "onthegomap__planetiler-17a4a3064805",
+      "path": "tasks/onthegomap__planetiler-17a4a3064805",
+      "content_hash": "sha256:a2ede2d6869a580357a6a3d51494eea94218b086aa6e983e6159fefe1e7a861e",
+      "image": "ghcr.io/khesoem/planetiler-17a4a30648053373e5e8b70060d27ff6d7a70d9c:latest"
+    },
+    {
+      "task_id": "camunda-community-hub__spring-zeebe-0964527df570",
+      "path": "tasks/camunda-community-hub__spring-zeebe-0964527df570",
+      "content_hash": "sha256:73bee3c6226bf3eaef1f1e114d075ea4ee33981afad8e999461dc0cf72114351",
+      "image": "ghcr.io/khesoem/spring-zeebe-0964527df570216c152e1aab2dff906cafd450ab:latest"
+    },
+    {
+      "task_id": "mathieucarbou__license-maven-plugin-a4cd1f4f3c7f",
+      "path": "tasks/mathieucarbou__license-maven-plugin-a4cd1f4f3c7f",
+      "content_hash": "sha256:bcfb562324d2bf307987dda38e2d99270a766a655f08541cc339abf5ddd1a050",
+      "image": "ghcr.io/khesoem/license-maven-plugin-a4cd1f4f3c7ff0c39e4d3d95ef8f8d0d92bc7a5c:latest"
+    },
+    {
+      "task_id": "marcosbarbero__spring-cloud-zuul-ratelimit-58e7264599b4",
+      "path": "tasks/marcosbarbero__spring-cloud-zuul-ratelimit-58e7264599b4",
+      "content_hash": "sha256:a73c9672429f84df5126aca7a211e741ff7ada014108dc99c9b01a927c61d4e9",
+      "image": "ghcr.io/khesoem/spring-cloud-zuul-ratelimit-58e7264599b48d27b51935d61eca3d75beb79ae7:latest"
+    }
+  ]
+}

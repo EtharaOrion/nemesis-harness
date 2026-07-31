@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "obsidiandynamics__kafdrop-d5e9f0b73f85"
+org = "jeto-bench"
+description = "Reduce execution time of . in obsidiandynamics/kafdrop"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "obsidiandynamics/kafdrop"
+ref = "60d9db216bcd7792b85abd21d880b9303dde4848"
+reference = "https://github.com/obsidiandynamics/kafdrop/commit/d5e9f0b73f856196fdece06502d626d1ef05ba23"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:e2ed5110d8b58dcd8c8c3052c8cf112f44b0ea5945110f06ece3271703c682e5"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "d5e9f0b73f856196fdece06502d626d1ef05ba23"
+before_commit = "60d9db216bcd7792b85abd21d880b9303dde4848"
+issue_number = "233"
+pr_number = "277"
+modified_modules = ["."]
+changed_files = ["src/main/java/kafdrop/controller/TopicController.java", "src/main/java/kafdrop/service/KafkaMonitor.java", "src/main/java/kafdrop/service/KafkaMonitorImpl.java", "src/main/java/kafdrop/controller/ConsumerController.java", "src/main/java/kafdrop/service/KafkaHighLevelConsumer.java", "src/main/java/kafdrop/model/TopicVO.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0556348074179742
+reference_p_value = 0.8997557889670134
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/kafdrop-d5e9f0b73f856196fdece06502d626d1ef05ba23:latest"
+image_tag = "ghcr.io/khesoem/kafdrop-d5e9f0b73f856196fdece06502d626d1ef05ba23:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

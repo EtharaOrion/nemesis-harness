@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "mhewedy__spring-data-jpa-mongodb-expressions-45e0e1c3f1ab"
+org = "jeto-bench"
+description = "Reduce execution time of . in mhewedy/spring-data-jpa-mongodb-expressions"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "mhewedy/spring-data-jpa-mongodb-expressions"
+ref = "45e0e1c3f1abff6c9a457905b80cb884f8a23487^"
+reference = "https://github.com/mhewedy/spring-data-jpa-mongodb-expressions/commit/45e0e1c3f1abff6c9a457905b80cb884f8a23487"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:b63e1bc8df569c3e54b700ed6739ebe94af3ad0a6816a0db8179c67307585930"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "45e0e1c3f1abff6c9a457905b80cb884f8a23487"
+issue_number = "30"
+modified_modules = ["."]
+changed_files = ["src/main/java/com/github/mhewedy/expressions/ExpressionsPredicateBuilder.java", "src/main/java/com/github/mhewedy/expressions/ExpressionsRepositoryImpl.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0024584126498245
+reference_p_value = 0.9999999990686774
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/spring-data-jpa-mongodb-expressions-45e0e1c3f1abff6c9a457905b80cb884f8a23487:latest"
+image_tag = "ghcr.io/khesoem/spring-data-jpa-mongodb-expressions-45e0e1c3f1abff6c9a457905b80cb884f8a23487:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

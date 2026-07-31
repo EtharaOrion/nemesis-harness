@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__dubbo-2905d975d4fe"
+org = "jeto-bench"
+description = "Reduce execution time of dubbo-common in apache/dubbo"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/dubbo"
+ref = "47f7be2fd6137dc01433d9cd0e37204b0d350686"
+reference = "https://github.com/apache/dubbo/commit/2905d975d4fefaa27e7630ae70aa1597f48e968a"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:3195e8c54755c9304650fd7cfae36fda5cebe706256fcf9f4237f5380921f440"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "2905d975d4fefaa27e7630ae70aa1597f48e968a"
+before_commit = "47f7be2fd6137dc01433d9cd0e37204b0d350686"
+issue_number = "9973"
+pr_number = "10245"
+modified_modules = ["dubbo-common"]
+changed_files = ["dubbo-common/src/main/java/org/apache/dubbo/common/utils/PojoUtils.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0007291966965694
+reference_p_value = 0.9999957848340272
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/dubbo-2905d975d4fefaa27e7630ae70aa1597f48e968a:latest"
+image_tag = "ghcr.io/khesoem/dubbo-2905d975d4fefaa27e7630ae70aa1597f48e968a:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

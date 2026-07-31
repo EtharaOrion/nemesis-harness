@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-28464f498862"
+org = "jeto-bench"
+description = "Reduce execution time of services,model/infinispan,model/storage-private in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "b5e282648f6d2f77e84ed07b4a3ed9203123e408"
+reference = "https://github.com/keycloak/keycloak/commit/28464f4988625475e0bf5c312a6ffcb454699e02"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:5e54d28084f9a0772fa0b8d048463a8fff4638d34b6d0537fcbac92f2ee8c6ad"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "28464f4988625475e0bf5c312a6ffcb454699e02"
+before_commit = "b5e282648f6d2f77e84ed07b4a3ed9203123e408"
+issue_number = "33353"
+pr_number = "33354"
+modified_modules = ["services", "model/infinispan", "model/storage-private"]
+changed_files = ["services/src/main/java/org/keycloak/organization/utils/Organizations.java", "model/storage-private/src/main/java/org/keycloak/storage/UserStorageManager.java", "model/infinispan/src/main/java/org/keycloak/models/cache/infinispan/organization/InfinispanOrganizationProvider.java", "model/infinispan/src/main/java/org/keycloak/models/cache/infinispan/organization/OrganizationAdapter.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0316343761553141
+reference_p_value = 0.9973885603249072
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-28464f4988625475e0bf5c312a6ffcb454699e02:latest"
+image_tag = "ghcr.io/khesoem/keycloak-28464f4988625475e0bf5c312a6ffcb454699e02:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

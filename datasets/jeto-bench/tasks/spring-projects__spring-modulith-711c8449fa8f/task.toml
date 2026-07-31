@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "spring-projects__spring-modulith-711c8449fa8f"
+org = "jeto-bench"
+description = "Reduce execution time of spring-modulith-events/spring-modulith-events-core in spring-projects/spring-modulith"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "spring-projects/spring-modulith"
+ref = "711c8449fa8f0494650d95ff6d23d8c3e474a8df^"
+reference = "https://github.com/spring-projects/spring-modulith/commit/711c8449fa8f0494650d95ff6d23d8c3e474a8df"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:91d28da1a83110d0e3bf861bc534240b4e48679289b383e73206b6a8e12162be"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "711c8449fa8f0494650d95ff6d23d8c3e474a8df"
+issue_number = "1146"
+modified_modules = ["spring-modulith-events/spring-modulith-events-core"]
+changed_files = ["spring-modulith-events/spring-modulith-events-core/src/main/java/org/springframework/modulith/events/core/DefaultEventPublicationRegistry.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0290116622939385
+reference_p_value = 0.9998375428840518
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/spring-modulith-711c8449fa8f0494650d95ff6d23d8c3e474a8df:latest"
+image_tag = "ghcr.io/khesoem/spring-modulith-711c8449fa8f0494650d95ff6d23d8c3e474a8df:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

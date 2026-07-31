@@ -1,0 +1,18 @@
+{
+  "log_dir": "/logs/harbor",
+  "output_dir": "/logs/harbor",
+  "exec_times": 11,
+  "min_p_value": 0.1,
+  "min_exec_time_improvement": 0.01,
+  "modules": [
+    "core"
+  ],
+  "f2p": [
+    "com.alibaba.fastjson2.JSONFactoryNameCacheTest",
+    "com.alibaba.fastjson2.JSONPathSegmentIndexTest",
+    "com.alibaba.fastjson2.JSONPathTest3",
+    "com.alibaba.fastjson2.JSONPathTypedMultiTest3"
+  ],
+  "p2p_policy": "all-tests-in-modified-modules",
+  "shaped": false
+}

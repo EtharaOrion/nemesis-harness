@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__shardingsphere-2c89f897def5"
+org = "jeto-bench"
+description = "Reduce execution time of infra/util in apache/shardingsphere"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/shardingsphere"
+ref = "77325f0bbfac48070efb668dec8250b314f79bec"
+reference = "https://github.com/apache/shardingsphere/commit/2c89f897def51ae7df1c953b55e268aee4d357ca"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:851aa96532b0f6c48416b6da4c130572e8a18d3168c1b39a998b6788615b065f"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "2c89f897def51ae7df1c953b55e268aee4d357ca"
+before_commit = "77325f0bbfac48070efb668dec8250b314f79bec"
+issue_number = "23200"
+pr_number = "23201"
+modified_modules = ["infra/util"]
+changed_files = ["infra/util/src/main/java/org/apache/shardingsphere/infra/util/spi/ShardingSphereServiceLoader.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0210175010175009
+reference_p_value = 0.8997557889670134
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/shardingsphere-2c89f897def51ae7df1c953b55e268aee4d357ca:latest"
+image_tag = "ghcr.io/khesoem/shardingsphere-2c89f897def51ae7df1c953b55e268aee4d357ca:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

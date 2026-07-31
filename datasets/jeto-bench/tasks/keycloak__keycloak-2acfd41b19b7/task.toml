@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-2acfd41b19b7"
+org = "jeto-bench"
+description = "Reduce execution time of services in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "2acfd41b19b7fbe459450145debf547aed375b4b^"
+reference = "https://github.com/keycloak/keycloak/commit/2acfd41b19b7fbe459450145debf547aed375b4b"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:8203e895318f9901ce1d3ea0779bd4caa60b7aa3ec8ed6d7aee0f12c0c217a71"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "2acfd41b19b7fbe459450145debf547aed375b4b"
+issue_number = "44447"
+modified_modules = ["services"]
+changed_files = ["services/src/main/java/org/keycloak/authentication/authenticators/client/ClientAssertionState.java", "services/src/main/java/org/keycloak/authentication/authenticators/client/JWTClientAuthenticator.java", "services/src/main/java/org/keycloak/protocol/oidc/grants/JWTAuthorizationGrantValidator.java", "services/src/main/java/org/keycloak/authentication/authenticators/client/FederatedJWTClientAuthenticator.java", "services/src/main/java/org/keycloak/authentication/authenticators/client/JWTClientSecretAuthenticator.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0108904043237203
+reference_p_value = 0.99997026193887
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-2acfd41b19b7fbe459450145debf547aed375b4b:latest"
+image_tag = "ghcr.io/khesoem/keycloak-2acfd41b19b7fbe459450145debf547aed375b4b:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

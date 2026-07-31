@@ -57,6 +57,40 @@ Notes:
 - `github_access_token` is needed for GitHub API access.
 - `OPENROUTER_API_KEY` / `OPENAI_API_KEY` are used by configured LLM-related components.
 
+## Claude Code Bridge (Opus 4.8 on subscription)
+
+`src/claude_oauth/` runs an Anthropic-compatible proxy backed by the local
+Claude Code OAuth credentials, so LLM components can call `claude-opus-4-8`
+without an Anthropic/OpenRouter key:
+
+```bash
+./scripts/start_claude_bridge.sh    # serves :8765, credentials from the Keychain
+```
+
+With it running, `src/llm/claude_bridge.py::Opus_4_8_Bridge` and the OpenHands
+runner both route through it by default. Settings live in `.env` and
+`claude_bridge` in `src/config.py`. Full details: `docs/CLAUDE_BRIDGE.md`.
+
+## Harbor Export (RL environments)
+
+`scripts/export_harbor.py` emits the executable ETIPs as Harbor-format tasks
+(the layout [Repo2RLEnv](https://github.com/huggingface/Repo2RLEnv) consumes),
+using the prebuilt public per-commit images as environments and this harness's
+own criterion — statistically significant execution-time improvement with the
+module suite still green — as the reward:
+
+```bash
+python scripts/export_harbor.py --out datasets/jeto-bench
+python scripts/export_harbor.py --out datasets/jeto-full --include-unverified
+python scripts/export_harbor.py --out /tmp/one --commit <sha> --with-oracle
+```
+
+`scripts/harbor/verifier.py` is copied into every task and reproduces
+`MvnwExecResults` in pure stdlib (no numpy/scipy inside the task image). The
+export adds a `jeto_exec_time` pipeline name and an `exec_time_improvement`
+reward kind, neither of which is registered upstream — see the generated
+`README.md` in the output directory.
+
 ## Configuration and Filters
 
 User-defined filters and analysis configuration for static and dynamic workflows can be set in:

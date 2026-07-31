@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-f7ee930a2718"
+org = "jeto-bench"
+description = "Reduce execution time of model/infinispan in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "f7ee930a2718ac1bcf3f65d713b3863d675341c8^"
+reference = "https://github.com/keycloak/keycloak/commit/f7ee930a2718ac1bcf3f65d713b3863d675341c8"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:80f736181fc6b1ea57911c56661fc21f81766821312edf728d352301fbda2fce"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "f7ee930a2718ac1bcf3f65d713b3863d675341c8"
+issue_number = "44048"
+modified_modules = ["model/infinispan"]
+changed_files = ["model/infinispan/src/main/java/org/keycloak/models/sessions/infinispan/listeners/RemoteUserSessionExpirationListener.java", "model/infinispan/src/main/java/org/keycloak/cluster/infinispan/remote/RemoteInfinispanNotificationManager.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0034682390448749
+reference_p_value = 0.9973885603249072
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-f7ee930a2718ac1bcf3f65d713b3863d675341c8:latest"
+image_tag = "ghcr.io/khesoem/keycloak-f7ee930a2718ac1bcf3f65d713b3863d675341c8:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

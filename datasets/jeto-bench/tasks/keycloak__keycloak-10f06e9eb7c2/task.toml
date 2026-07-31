@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-10f06e9eb7c2"
+org = "jeto-bench"
+description = "Reduce execution time of model/infinispan in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "10f06e9eb7c23aadb14e564b469f4b39f7af1e6f^"
+reference = "https://github.com/keycloak/keycloak/commit/10f06e9eb7c23aadb14e564b469f4b39f7af1e6f"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:4578c8bbd93dfe972398df65b94eaeb86f3331ea5a05695e650655607396614c"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "10f06e9eb7c23aadb14e564b469f4b39f7af1e6f"
+issue_number = "43357"
+modified_modules = ["model/infinispan"]
+changed_files = ["model/infinispan/src/main/java/org/keycloak/jgroups/protocol/KEYCLOAK_JDBC_PING2.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0130929169374684
+reference_p_value = 0.9998375428840518
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-10f06e9eb7c23aadb14e564b469f4b39f7af1e6f:latest"
+image_tag = "ghcr.io/khesoem/keycloak-10f06e9eb7c23aadb14e564b469f4b39f7af1e6f:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

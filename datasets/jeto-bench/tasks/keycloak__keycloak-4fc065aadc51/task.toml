@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-4fc065aadc51"
+org = "jeto-bench"
+description = "Reduce execution time of saml-core,server-spi in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "4fc065aadc5146c938ecf842a1548ef67f1ecdb3^"
+reference = "https://github.com/keycloak/keycloak/commit/4fc065aadc5146c938ecf842a1548ef67f1ecdb3"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:bb54e91cc7988c87e482f757008b905e8fbf39c519cea54f6e73adff72a37703"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "4fc065aadc5146c938ecf842a1548ef67f1ecdb3"
+issue_number = "39987"
+modified_modules = ["saml-core", "server-spi"]
+changed_files = ["saml-core/src/main/java/org/keycloak/saml/processing/core/saml/v2/util/XMLTimeUtil.java", "saml-core/src/main/java/org/keycloak/saml/processing/core/parsers/saml/metadata/SAMLEncryptionMethodParser.java", "server-spi/src/main/java/org/keycloak/component/PrioritizedComponentModel.java", "server-spi/src/main/java/org/keycloak/component/ComponentModel.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0072152125888751
+reference_p_value = 0.9992845468223096
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-4fc065aadc5146c938ecf842a1548ef67f1ecdb3:latest"
+image_tag = "ghcr.io/khesoem/keycloak-4fc065aadc5146c938ecf842a1548ef67f1ecdb3:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

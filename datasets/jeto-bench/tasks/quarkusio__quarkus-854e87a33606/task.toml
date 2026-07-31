@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "quarkusio__quarkus-854e87a33606"
+org = "jeto-bench"
+description = "Reduce execution time of independent-projects/arc/runtime in quarkusio/quarkus"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "quarkusio/quarkus"
+ref = "b390c218ce37a1c8daf9c4d079f95f77ad0b644b"
+reference = "https://github.com/quarkusio/quarkus/commit/854e87a33606165ddff08f186eb62f95bdf07ebb"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:7694dd2e74a3792e68514183956dac57a1972d10dbba2d092b8173a9c9024d12"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "854e87a33606165ddff08f186eb62f95bdf07ebb"
+before_commit = "b390c218ce37a1c8daf9c4d079f95f77ad0b644b"
+issue_number = "27743"
+pr_number = "27736"
+modified_modules = ["independent-projects/arc/runtime"]
+changed_files = ["independent-projects/arc/runtime/src/main/java/io/quarkus/arc/impl/RequestContext.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0075408462505235
+reference_p_value = 0.572232224047184
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/quarkus-854e87a33606165ddff08f186eb62f95bdf07ebb:latest"
+image_tag = "ghcr.io/khesoem/quarkus-854e87a33606165ddff08f186eb62f95bdf07ebb:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

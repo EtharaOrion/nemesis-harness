@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "apache__incubator-seata-a5e567a92ad9"
+org = "jeto-bench"
+description = "Reduce execution time of config/seata-config-core in apache/incubator-seata"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "apache/incubator-seata"
+ref = "ce41bce9180f60363bf86ddf5e12f19b1e534958"
+reference = "https://github.com/apache/incubator-seata/commit/a5e567a92ad93edb7e93cd2cac4c9bbe75fc40ad"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:c3004cee74c430bb7c69a86cc059466a8d11d1347b571d0583cfa2a4a46c4a99"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "a5e567a92ad93edb7e93cd2cac4c9bbe75fc40ad"
+before_commit = "ce41bce9180f60363bf86ddf5e12f19b1e534958"
+issue_number = "3571"
+pr_number = "3222"
+modified_modules = ["config/seata-config-core"]
+changed_files = ["config/seata-config-core/src/main/java/io/seata/config/FileConfiguration.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0027127598243204
+reference_p_value = 0.99997026193887
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/incubator-seata-a5e567a92ad93edb7e93cd2cac4c9bbe75fc40ad:latest"
+image_tag = "ghcr.io/khesoem/incubator-seata-a5e567a92ad93edb7e93cd2cac4c9bbe75fc40ad:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

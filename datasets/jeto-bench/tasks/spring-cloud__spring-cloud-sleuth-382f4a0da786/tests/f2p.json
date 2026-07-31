@@ -1,0 +1,4 @@
+[
+  "org.springframework.cloud.sleuth.instrument.hystrix.SleuthHystrixConcurrencyStrategyTest",
+  "org.springframework.cloud.sleuth.instrument.web.client.GH846Tests"
+]

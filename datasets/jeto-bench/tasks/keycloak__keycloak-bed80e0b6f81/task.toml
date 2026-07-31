@@ -1,0 +1,51 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-bed80e0b6f81"
+org = "jeto-bench"
+description = "Reduce execution time of model/map-hot-rod in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "eab2dff979d1b84a3de2e27837105b75d77701ef"
+reference = "https://github.com/keycloak/keycloak/commit/bed80e0b6f8122687551fa4ce12a8b31584e0544"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:64dd126cd972d7e1ff83aacd187408855de03635c6934904e655b9a830265c7f"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "bed80e0b6f8122687551fa4ce12a8b31584e0544"
+before_commit = "eab2dff979d1b84a3de2e27837105b75d77701ef"
+issue_number = "11069"
+pr_number = "11850"
+modified_modules = ["model/map-hot-rod"]
+changed_files = ["model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/group/HotRodGroupEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/userSession/HotRodUserSessionEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/user/HotRodUserEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/role/HotRodRoleEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/authSession/HotRodRootAuthenticationSessionEntity.java", "quarkus/runtime/src/main/java/org/keycloak/quarkus/runtime/themes/FlatClasspathThemeResourceProviderFactory.java", "services/src/main/java/org/keycloak/theme/ClasspathThemeResourceProviderFactory.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/userSession/HotRodAuthenticatedClientSessionEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/loginFailure/HotRodUserLoginFailureEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/realm/HotRodRealmEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/clientscope/HotRodClientScopeEntity.java", "model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/client/HotRodClientEntity.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0049847118374059
+reference_p_value = 0.707667644135654
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-bed80e0b6f8122687551fa4ce12a8b31584e0544:latest"
+image_tag = "ghcr.io/khesoem/keycloak-bed80e0b6f8122687551fa4ce12a8b31584e0544:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

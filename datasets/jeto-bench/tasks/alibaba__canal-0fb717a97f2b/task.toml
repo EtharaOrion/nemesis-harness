@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "alibaba__canal-0fb717a97f2b"
+org = "jeto-bench"
+description = "Reduce execution time of server,deployer in alibaba/canal"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "alibaba/canal"
+ref = "0fb717a97f2b954908b6756e17d97304e0b1ea27^"
+reference = "https://github.com/alibaba/canal/commit/0fb717a97f2b954908b6756e17d97304e0b1ea27"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:c1124d962ff556c4dc1230989b1fa0ca96ce18e136e1f71e78302b55e11728c7"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "0fb717a97f2b954908b6756e17d97304e0b1ea27"
+issue_number = "2258"
+modified_modules = ["server", "deployer"]
+changed_files = ["server/src/main/java/com/alibaba/otter/canal/rabbitmq/CanalRabbitMQProducer.java", "server/src/main/java/com/alibaba/otter/canal/kafka/CanalKafkaProducer.java", "deployer/src/main/java/com/alibaba/otter/canal/deployer/CanalStarter.java", "server/src/main/java/com/alibaba/otter/canal/common/MQMessageUtils.java", "server/src/main/java/com/alibaba/otter/canal/rocketmq/CanalRocketMQProducer.java", "server/src/main/java/com/alibaba/otter/canal/common/MQProperties.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0057750554466759
+reference_p_value = 0.9999999711290002
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/canal-0fb717a97f2b954908b6756e17d97304e0b1ea27:latest"
+image_tag = "ghcr.io/khesoem/canal-0fb717a97f2b954908b6756e17d97304e0b1ea27:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

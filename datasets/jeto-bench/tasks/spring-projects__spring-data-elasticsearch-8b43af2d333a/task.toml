@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "spring-projects__spring-data-elasticsearch-8b43af2d333a"
+org = "jeto-bench"
+description = "Reduce execution time of . in spring-projects/spring-data-elasticsearch"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "spring-projects/spring-data-elasticsearch"
+ref = "8b43af2d333a294d334c09e2b44f7734d014c644^"
+reference = "https://github.com/spring-projects/spring-data-elasticsearch/commit/8b43af2d333a294d334c09e2b44f7734d014c644"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:be13f0000be2318438fbba6df8d73c7b98f1764663cdf437bc9e6f39f9b3e91a"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "8b43af2d333a294d334c09e2b44f7734d014c644"
+issue_number = "3063"
+modified_modules = ["."]
+changed_files = ["src/main/java/org/springframework/data/elasticsearch/core/geo/GeoJsonLineString.java", "src/main/java/org/springframework/data/elasticsearch/core/geo/GeoJsonPolygon.java", "src/main/java/org/springframework/data/elasticsearch/core/geo/GeoJsonMultiPoint.java", "src/main/java/org/springframework/data/elasticsearch/core/geo/GeoJson.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0101502927736414
+reference_p_value = 0.9973885603249072
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/spring-data-elasticsearch-8b43af2d333a294d334c09e2b44f7734d014c644:latest"
+image_tag = "ghcr.io/khesoem/spring-data-elasticsearch-8b43af2d333a294d334c09e2b44f7734d014c644:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

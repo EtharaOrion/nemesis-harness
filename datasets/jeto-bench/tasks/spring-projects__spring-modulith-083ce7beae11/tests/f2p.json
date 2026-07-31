@@ -1,0 +1,4 @@
+[
+  "org.springframework.modulith.core.ApplicationModulesUnitTests",
+  "org.springframework.modulith.core.ModuleUnitTest"
+]

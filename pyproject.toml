@@ -16,7 +16,11 @@ dependencies = [
     "numpy (>=2.3.4,<3.0.0)",
     "pandas (>=2.3.3,<3.0.0)",
     "matplotlib (>=3.10.8,<4.0.0)",
-    "matplotlib-venn (>=1.1.2,<2.0.0)"
+    "matplotlib-venn (>=1.1.2,<2.0.0)",
+    # Claude Code OAuth bridge (src/claude_oauth) — see docs/CLAUDE_BRIDGE.md
+    "fastapi (>=0.115,<1.0.0)",
+    "uvicorn (>=0.30,<1.0.0)",
+    "httpx (>=0.27,<1.0.0)"
 ]
 
 

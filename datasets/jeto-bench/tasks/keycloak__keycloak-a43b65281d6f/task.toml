@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-a43b65281d6f"
+org = "jeto-bench"
+description = "Reduce execution time of authz/policy/common in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "a43b65281d6f3631366b71858cad25676aaf635d^"
+reference = "https://github.com/keycloak/keycloak/commit/a43b65281d6f3631366b71858cad25676aaf635d"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:7d7d1a24239871688c4db24b3a0734da70d4e184e826b750abc3cc80b188d7e9"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "a43b65281d6f3631366b71858cad25676aaf635d"
+issue_number = "35796"
+modified_modules = ["authz/policy/common"]
+changed_files = ["authz/policy/common/src/main/java/org/keycloak/authorization/policy/provider/user/UserPolicyProviderFactory.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0185342440465201
+reference_p_value = 0.9786130273714662
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-a43b65281d6f3631366b71858cad25676aaf635d:latest"
+image_tag = "ghcr.io/khesoem/keycloak-a43b65281d6f3631366b71858cad25676aaf635d:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

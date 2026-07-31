@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-971016f74346"
+org = "jeto-bench"
+description = "Reduce execution time of common in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "971016f74346955c71f1b4fcb45be1e43abb9f8b^"
+reference = "https://github.com/keycloak/keycloak/commit/971016f74346955c71f1b4fcb45be1e43abb9f8b"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:6dc34a9406b279ed3563a0982bab28a6799046508b0bfa41d226ca7dbb2d0a94"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "971016f74346955c71f1b4fcb45be1e43abb9f8b"
+issue_number = "42283"
+modified_modules = ["common"]
+changed_files = ["common/src/main/java/org/keycloak/common/util/SecretGenerator.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0061770761839396
+reference_p_value = 0.9999957848340272
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-971016f74346955c71f1b4fcb45be1e43abb9f8b:latest"
+image_tag = "ghcr.io/khesoem/keycloak-971016f74346955c71f1b4fcb45be1e43abb9f8b:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

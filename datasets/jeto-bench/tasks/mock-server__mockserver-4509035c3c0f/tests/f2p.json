@@ -1,0 +1,4 @@
+[
+  "org.mockserver.mock.HttpStateTest",
+  "org.mockserver.templates.engine.velocity.VelocityTemplateEngineTest"
+]

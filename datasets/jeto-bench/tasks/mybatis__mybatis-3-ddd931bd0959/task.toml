@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "mybatis__mybatis-3-ddd931bd0959"
+org = "jeto-bench"
+description = "Reduce execution time of . in mybatis/mybatis-3"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "mybatis/mybatis-3"
+ref = "ddd931bd095923ccdb199dedd1fd82065bf5d6a7^"
+reference = "https://github.com/mybatis/mybatis-3/commit/ddd931bd095923ccdb199dedd1fd82065bf5d6a7"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:b36b084b9a7b8a8816779e292f5062b824463cfb8032523eff352e9a9e4450e9"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "ddd931bd095923ccdb199dedd1fd82065bf5d6a7"
+issue_number = "2426"
+modified_modules = ["."]
+changed_files = ["src/main/java/org/apache/ibatis/transaction/jdbc/JdbcTransactionFactory.java", "src/main/java/org/apache/ibatis/transaction/jdbc/JdbcTransaction.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0040196733567345
+reference_p_value = 1.0
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/mybatis-3-ddd931bd095923ccdb199dedd1fd82065bf5d6a7:latest"
+image_tag = "ghcr.io/khesoem/mybatis-3-ddd931bd095923ccdb199dedd1fd82065bf5d6a7:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

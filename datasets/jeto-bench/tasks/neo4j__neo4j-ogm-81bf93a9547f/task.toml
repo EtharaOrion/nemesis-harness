@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "neo4j__neo4j-ogm-81bf93a9547f"
+org = "jeto-bench"
+description = "Reduce execution time of core in neo4j/neo4j-ogm"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "neo4j/neo4j-ogm"
+ref = "81bf93a9547f41aa02552b80642cc1b03bdd1e2d^"
+reference = "https://github.com/neo4j/neo4j-ogm/commit/81bf93a9547f41aa02552b80642cc1b03bdd1e2d"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:e146e39de0950f450e2d0825471535273fc26c09113e1bcf74cc0e5ee8d20bef"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "81bf93a9547f41aa02552b80642cc1b03bdd1e2d"
+issue_number = "854"
+modified_modules = ["core"]
+changed_files = ["core/src/main/java/org/neo4j/ogm/session/delegates/SaveEventDelegate.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = -0.0303541315345701
+reference_p_value = 0.991937599144876
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/neo4j-ogm-81bf93a9547f41aa02552b80642cc1b03bdd1e2d:latest"
+image_tag = "ghcr.io/khesoem/neo4j-ogm-81bf93a9547f41aa02552b80642cc1b03bdd1e2d:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

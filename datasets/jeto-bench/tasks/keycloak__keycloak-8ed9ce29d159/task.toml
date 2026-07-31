@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "keycloak__keycloak-8ed9ce29d159"
+org = "jeto-bench"
+description = "Reduce execution time of model/map-hot-rod in keycloak/keycloak"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "keycloak/keycloak"
+ref = "8ed9ce29d159d10728ada8da708dab111921b024^"
+reference = "https://github.com/keycloak/keycloak/commit/8ed9ce29d159d10728ada8da708dab111921b024"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:a0780fa3100ae43045a1bb1cb6fba8aab6057f5c49550975d73d3c85c00b5488"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "8ed9ce29d159d10728ada8da708dab111921b024"
+issue_number = "13303"
+modified_modules = ["model/map-hot-rod"]
+changed_files = ["model/map-hot-rod/src/main/java/org/keycloak/models/map/storage/hotRod/connections/DefaultHotRodConnectionProviderFactory.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.0015048154093098
+reference_p_value = 0.9506314266473056
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/keycloak-8ed9ce29d159d10728ada8da708dab111921b024:latest"
+image_tag = "ghcr.io/khesoem/keycloak-8ed9ce29d159d10728ada8da708dab111921b024:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0

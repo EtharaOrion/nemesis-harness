@@ -1,0 +1,49 @@
+version = "1.0"
+
+[task]
+name = "gluonhq__rich-text-area-4bfda0aeee99"
+org = "jeto-bench"
+description = "Reduce execution time of . in gluonhq/rich-text-area"
+
+[metadata]
+difficulty = "hard"
+category = "performance"
+
+[metadata.repo2env]
+spec_version = "0.2.0"
+pipeline = "jeto_exec_time"
+pipeline_version = "0.1.0"
+repo = "gluonhq/rich-text-area"
+ref = "4bfda0aeee99e29af06d711c60f465daa3044261^"
+reference = "https://github.com/gluonhq/rich-text-area/commit/4bfda0aeee99e29af06d711c60f465daa3044261"
+source_access = "public"
+built_at = "2026-07-31T11:44:50+00:00"
+synthesis_llm = "none (deterministic export from results/dataset.csv)"
+content_hash = "sha256:0c0ac1768bc08e8a6001b429e75789a5ad71f651250054722cfe9c31b92ecf45"
+reward_kinds = ["test_execution", "exec_time_improvement"]
+
+[metadata.repo2env.jeto_exec_time]
+after_commit = "4bfda0aeee99e29af06d711c60f465daa3044261"
+issue_number = "3"
+modified_modules = ["."]
+changed_files = ["src/main/java/com/gluonhq/richtext/model/TextDecoration.java", "src/main/java/com/gluonhq/richtext/model/Piece.java", "src/main/java/com/gluonhq/richtext/RichTextAreaSkin.java"]
+exec_times = 11
+min_p_value = 0.1
+min_exec_time_improvement = 0.01
+p2p_policy = "all-tests-in-modified-modules"
+reference_exec_time_improvement = 0.6629661258183888
+reference_p_value = 9.313225746154783e-10
+manually_verified_improvement = true
+oracle_solution_stripped_from_image = true
+
+[metadata.repo2env.reproducibility]
+mode = "registry"
+image_ref = "ghcr.io/khesoem/rich-text-area-4bfda0aeee99e29af06d711c60f465daa3044261:latest"
+image_tag = "ghcr.io/khesoem/rich-text-area-4bfda0aeee99e29af06d711c60f465daa3044261:latest"
+image_visibility = "public"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 19800.0
