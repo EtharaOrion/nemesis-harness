@@ -1,0 +1,54 @@
+# Repo2RLEnv extraction pinned to a single JETO-Bench commit.
+#
+#   repo2rlenv generate --config scripts/repo2rlenv/jeto-commit.yaml
+#
+# Why the unusual options: commit_runtime is built for bug-fix commits, where
+# the reward is "a failing test starts passing" (F2P). JETO-Bench commits are
+# performance patches — they add no tests and fix no failures, so the stock
+# filters reject essentially all of them. We disable the bug-fix-shaped gates
+# and use this pipeline purely for EXTRACTION: a clean problem statement, the
+# patch/test_patch split, the environment recipe and Harbor metadata. The
+# reward stays JETO's timing comparison (datasets/jeto-bench/.../verifier.py).
+#
+# `branch` is set to the exact commit SHA and `limit: 1`, so `git log` yields
+# that one commit and nothing else.
+
+spec_version: "0.1.0"
+
+repo:
+  url: https://github.com/mybatis/mybatis-3
+  ref: ddd931bd095923ccdb199dedd1fd82065bf5d6a7
+  access: public
+
+pipeline:
+  name: commit_runtime
+  options:
+    # --- pin to exactly the JETO commit ---
+    branch: ddd931bd095923ccdb199dedd1fd82065bf5d6a7
+    limit: 1
+    clone_depth: 5
+
+    # --- relax the bug-fix-shaped filters (perf commits add no tests) ---
+    require_new_test_funcs: false
+    require_fail_to_pass: false
+    min_fail_to_pass: 0
+    skip_ci_only: false
+    min_message_words: 1
+    max_source_files_per_commit: 20
+
+    # --- extraction only; JETO's timing verifier remains the reward ---
+    skip_validation: true
+    synthesize_with_llm: true
+
+llm:
+  provider: anthropic
+  model: claude-opus-4-8
+  api_key_env: ANTHROPIC_API_KEY
+  # The Claude Code OAuth bridge (nemesis-harness/scripts/start_claude_bridge.sh).
+  endpoint: http://127.0.0.1:8765
+  timeout_sec: 600
+
+output:
+  destination: local
+  org: jeto-bench
+  dataset_name: jeto-repo2rlenv

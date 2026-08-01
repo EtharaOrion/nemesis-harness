@@ -32,6 +32,15 @@ log*.log*
 collected_commits/tmp_commits.csv
 results/dataset_bak.csv
 results/dataset_bak*.csv
+# Task data and run output live in their own repos (nemesis-dataset /
+# nemesis-trajectories). The harness carries only the code that runs them.
+# The directories themselves are kept, with their docs, so the default
+# --input / --output paths still exist in a fresh clone.
+input/*
+!input/README.md
+output/*
+!output/.gitkeep
+datasets/
 **/*.lock
 .cursor/
 anonymizer.sh

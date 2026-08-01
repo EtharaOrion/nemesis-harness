@@ -71,6 +71,94 @@ With it running, `src/llm/claude_bridge.py::Opus_4_8_Bridge` and the OpenHands
 runner both route through it by default. Settings live in `.env` and
 `claude_bridge` in `src/config.py`. Full details: `docs/CLAUDE_BRIDGE.md`.
 
+## Running the Benchmark (input/ → output/)
+
+`scripts/run_nemesis.py` is the one command that scores a whole task set. It
+reads every task under `input/` and writes a run bundle to `output/`:
+
+```bash
+python scripts/run_nemesis.py                  # all tasks, Opus agent
+python scripts/run_nemesis.py --agent oracle   # sanity check — expect ~1.0
+python scripts/run_nemesis.py --limit 3 --jobs 3
+python scripts/run_nemesis.py --task <uuid>    # one task; repeatable
+```
+
+`input/` holds 30 `pr_diff` tasks named by UUID (see `input/README.md`). Point
+`--input` anywhere else to score a different set; `--output` moves the bundle.
+
+Per task the runner builds `environment/Dockerfile` (repo cloned at the PR base
+commit, verifier baked in), lets the agent edit `/workspace`, then runs
+`tests/test.sh`, which diffs the workspace against the base commit and scores it
+with the 6-component `diff_similarity` reward.
+
+**Agents** (`--agent`)
+
+| | what it does | expected reward |
+|---|---|---|
+| `opus` | single-shot: instruction + context files → Opus 4.8 over the Claude bridge → apply the diff it returns | varies |
+| `oracle` | applies `solution/patch.diff` | ~1.0 |
+| `none` | no edits; empty predicted diff | 0.0 |
+
+`oracle` and `none` need no model and no bridge — run them first to prove the
+plumbing. `opus` requires `./scripts/start_claude_bridge.sh` to be up.
+
+**Output** — the Harbor/Repo2RLEnv trajectory layout, the same one
+`run_harbor_task.py` writes for exec_time tasks (`scripts/harbor_bundle.py`),
+rooted at `output/` so the input task tree stays untouched:
+
+```
+output/
+  <uuid>/                                    one per task, mirroring input/
+    trajectories/
+      Claude Opus 4.8/                       one per model; oracle and none get their own
+        pass_summary.json                    across every run_N of this task+model
+        run_1/
+          output.json      session_id, trajectory.meta_info, input_files,
+                           output_artifacts, messages, usage
+          report.json      model, run_index, reward, diff_similarity breakdown, patch status
+          logs/verifier/
+            reward.txt          the scalar Harbor reads
+            reward.json         flat numeric map (Harbor's schema)
+            reward-details.json nested sidecar: components, weights, judge status
+            test.sh             the exact verifier that ran
+            verify.log
+          output_media/
+            patch.diff     what the agent actually changed
+          run.log
+        run_2/ …                             repeats accumulate, never overwrite
+  sweeps/
+    sweep-0001.json                          cross-task roll-up for one invocation
+```
+
+`pass_summary.json` answers *how does this model do on this task across
+repeats*; `sweeps/sweep-NNNN.json` answers *how does it do across the task set* —
+average reward, solve rate, mean of each component, and breakdowns by difficulty
+and by repo. That sweep number is the one to compare between agents.
+
+Images are cached per task and base commit, so only the first run pays the clone
+cost (`--rebuild` forces one).
+
+**Disk.** Each task image carries its own repo clone — ~500MB, so a full 30-task
+sweep parks roughly 15GB in Docker. Reclaim it with:
+
+```bash
+docker rmi $(docker images 'nemesis/*' -q)              # drop cached task images
+find output -mindepth 1 -not -name .gitkeep -delete     # drop run bundles
+```
+
+**Notes**
+
+- The `llm_judge` component (weight 0.5) posts to `api.anthropic.com` directly
+  from inside the task container and ignores `ANTHROPIC_BASE_URL`, so the bridge
+  cannot serve it. Without an `ANTHROPIC_API_KEY` in the environment it reports
+  `no_api_key` and its weight is redistributed over the five deterministic
+  components — a comparable score, just a differently weighted one. Export a
+  real key to enable it.
+- Models write diffs with correct content and wrong line numbers, and usually
+  omit `diff --git` headers. The runner repairs the headers, then escalates
+  `git apply` → `git apply -C1` → `scripts/nemesis_apply.py`, which locates each
+  hunk by matching its context instead of trusting the `@@` offsets.
+
 ## Harbor Export (RL environments)
 
 `scripts/export_harbor.py` emits the executable ETIPs as Harbor-format tasks
